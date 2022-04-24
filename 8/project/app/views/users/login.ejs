@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+    <body>
+        <%- include('../nav/login') %>
+        <div class = "error">
+<%  for(let index in message){
+%>
+            <p><%= message[index]%></p>
+<%  }
+%>
+        </div>        
+
+        <form id = "login" class = "w-4 mt" action = "signin" method = "post">
+            <h1>Login</h1>
+            <p><label class = "ml w-3">Email Address:</label><input class = "ml w-5" type = "text" id = "emailLogin" name = "emailLogin"></p>
+            <p><label class = "ml w-3">Password:</labeL><input class = "ml w-5" type = "password" id = "passwordLogin" name = "passwordLogin"></p>
+            <input class = "submit ml-7 w-2" type = "submit" value = "Login">
+            <a href = "/register">Don't Have an account? Register</a>
+        </form>
+<%- include('../partials/footer') %>
+

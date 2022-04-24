@@ -1,0 +1,24 @@
+# DOCU : Application set up configuration
+# Created by : rcesperanzate
+# Date : April 2022
+
+# Server port to listen
+server_port: '8000' 
+
+# Engine to use either ejs , pub or etc 
+engine: 'ejs'
+
+# Directory of static folder containing images, css, js and etc
+public_folder: '/assets'
+
+# Directory of views folder
+views_folder: '/app/views'
+
+# Enable the viewing of profiler
+# Profiler status 1 - on 0 - off
+profiler: 0
+
+#url
+url: 'http://localhost:8000/'
+
+

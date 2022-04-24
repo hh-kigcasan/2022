@@ -1,0 +1,368 @@
+:root {
+    --rgb-primary: rgb(13, 116, 231);
+    --rgb-secondary: rgb(47, 187, 79);
+    --rgb-black: rgb(36, 41, 45);
+    --rgb-dark: rgb(43, 49, 55);
+    --rgb-white: rgb(255, 255, 255);
+    --rgb-grey: rgb(235, 235, 234);
+    --rgb-danger: rgb(182, 29, 3);
+
+    --rgba-primary: rgba(13, 116, 231, 0.80);
+    --rgba-secondary: rgba(47, 187, 79, 0.80);
+    --rgba-black: rgba(36, 41, 45, 0.90);
+    --rgba-dark: rgba(43, 49, 55, 0.90);
+    --rgba-white: rgba(255, 255, 255, 0.80);
+    --rgba-grey: rgba(235, 235, 234, 0.80);
+    --rgba-danger: rgb(182, 29, 3, 0.80);
+}
+.danger {
+    color: var(--rgba-danger);
+    font-weight: 400;
+}
+.success {
+    color: var(--rgba-secondary);
+}
+.muted {
+    color: var(--rgba-grey);
+}
+* {
+    //outline: 1px dashed pink;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+body {
+    min-height: 1080px;
+    font-family: 'Open Sans', sans-serif;
+    background: radial-gradient(var(--rgb-white), var(--rgb-grey));
+}
+    a, span, input, p, th, td {
+        font-size: small;
+        font-weight: 300;
+        color: var(--rgb-dark);
+    }
+    h1, h2, h3, th {
+        font-weight: 500;
+        color: var(--rgb-dark)
+    }
+    a {
+        color: var(--rgba-primary);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .no_user form {
+        width: 20%;
+        text-align: center;
+        margin: 200px auto 0 auto;
+    }
+        .no_user form * {
+            width: 100%;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .no_user form input {
+            padding: 8px;
+        }
+        .no_user form input[type=submit] {
+            background-color: var(--rgb-secondary);
+            color: var(--rgb-white);
+            cursor: pointer;
+        }
+        .no_user form input[type=submit]:hover {
+            background-color: var(--rgba-secondary);
+        }
+nav {
+    width: 100%;
+    height: 35px;
+    background-color: var(--rgba-dark);
+    padding: 5px;
+    position: relative;
+}
+    nav > * {
+        display: inline-block;
+        color: var(--rgb-white);
+        margin: 0 8px;
+        font-weight: 400;
+    }
+        nav p span {
+            font-size: x-small;
+            color: var(--rgba-white);
+        }
+        nav p span.username {
+            font-size: small;
+        }
+    nav div {
+        position: absolute;
+        right: 0;
+    }
+        nav div a {
+            padding: 8px;
+            background-color: var(--rgba-dark);
+            color: var(--rgba-white);
+        }
+        nav div a.logout {
+            margin-left: 8px;
+            background-color: var(--rgb-danger);
+        }
+section {
+    padding: 8px;
+}
+    section * {
+        margin-bottom: 8px;
+    }
+    section table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    section th, section td {
+        background-color: var(--rgb-dark);
+        color: var(--rgba-white);
+        text-align: start;
+        padding: 4px 8px;
+        border-bottom: 1px solid var(--rgba-secondary);
+    }
+    section .pagination {
+        width: fit-content;
+    }
+        section .pagination a, .rankings table a, .available_challenges table a {
+            padding: 8px;
+            font-size: x-small;
+            color: var(--rgba-white);
+            background-color: var(--rgb-dark);
+        }
+        .user section .pagination a {
+            font-size: small;
+        }
+        .rankings table a,  .available_challenges table a {
+            background-color: transparent;
+
+        }
+.challenge_partial {
+    width: 79%;
+    display: inline-block;
+    vertical-align: top;
+}
+    .history .records {
+        padding: 8px;
+    }
+        .history .records h3, .history .records .record {
+            margin-bottom: 8px;
+        }
+        .history .records .record {
+            padding-left: 8px;
+            position: relative;
+        }
+        .history .records div .record:hover, .history .records div .selected {
+            background-color: var(--rgba-grey);
+            cursor: pointer;
+        }
+            .history .records .record span {
+                position: absolute;
+                right: 0;
+            }
+    .history .records div .selected svg:hover {
+        background-color: var(--rgba-secondary);
+        border-radius: 50%;
+        color: whitesmoke;
+    }
+ .rankings, .available_challenges, .history,  .video {
+    display: inline-block;
+    vertical-align: top;
+}
+     .rankings, .available_challenges {
+        width: 350px;
+        height: 1080px;
+        background-color: var(--rgb-dark);
+        padding: 8px 0;
+        overflow-y: auto;
+        box-shadow: 4px 0 0 0 #49A14B;
+     }
+     .user .rankings {
+         width: 100%;
+     }
+         .rankings h3, .available_challenges h3 {
+            color: var(--rgba-white);
+            padding: 0 8px;
+        }
+         .rankings table, .available_challenges table {
+
+         }
+            .rankings table tr,.available_challenges table tr {
+                cursor: pointer;
+            }
+            .rankings table tr:hover td:not(.empty), .rankings table tr.selected td:not(.empty), .available_challenges table tr:hover td:not(.empty),  .available_challenges table tr.selected td:not(.empty) {
+                background-color: var(--rgba-secondary);
+            }
+            .rankings table tr td.empty, .available_challenges table tr td.empty {
+                text-align: center;
+            }
+            .rankings table tr th, .rankings table tr td, .available_challenges table tr th, .available_challenges table tr td {
+                font-size: x-small;
+            }
+            .user .rankings table tr th, .user .rankings table tr td {
+                font-size: small;
+            }
+
+         .rankings .pagination, .available_challenges .pagination {
+            margin: 0 auto;
+            padding: 0;
+        }
+     .history {
+         box-shadow: 4px 0 0 0 var(--rgba-dark);
+         background-color: var(--rgba-white);
+         padding: 0;
+         width: calc(100% - 358px);
+         height: 1080px;
+     }
+         .video {
+             width: 100%;
+             border: 1px solid var(--rgb-black);
+             border-bottom: 0;
+             background-color: var(--rgba-black);
+             position: relative;
+             display: inline-block;
+             height: 616px;
+             padding: 16px;
+         }
+             .video .problem, .video .editor p,  .video .editor textarea,
+             .video .test_cases h3,  .video .output h3,  .video .test_cases .response p:not(.success),  .video .output .response p {
+                 color: var(--rgba-white);
+                 cursor: default;
+                 font-size: small;
+            }
+                .video .problem span {
+                    color: var(--rgb-secondary);
+                }
+             .video .editor {
+                 width: 100%;
+                 position: relative;
+                 background-color: var(--rgb-dark);
+                 padding: 2px;
+                 height: 300px;
+                 margin: 16px 0;
+            }
+                .video .editor *, .video .test_cases *, .video .output * {
+                    font-family: "Courier New";
+                }
+                 .video .editor textarea {
+                     width: 100%;
+                     background-color: transparent;
+                     padding: 4px 8px;
+                     outline: none;
+                     cursor: default;
+                     height: 80%;
+                }
+                .video .editor input[type=submit] {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    padding: 8px;
+                    background-color: var(--rgb-secondary);
+                    color: var(--rgba-white);
+                    cursor: pointer;
+                    display: none;
+                }
+             .video .test_cases,  .video .output {
+                 display: inline-block;
+                 vertical-align: top;
+                 background-color: var(--rgb-dark);
+                 cursor: default;
+                 padding: 4px;
+                 overflow-y: auto;
+                 width: 49%;
+                 height: 180px;
+             }
+                .video .output {
+                    margin-left: 4px;
+                }
+                .video .test_cases h3,  .video .output h3 {
+                    color: var(--rgba-white);
+                    font-size: small;
+                    font-weight: 500;
+                }
+                .video .test_cases .response,  .video .output .response {
+                    padding: 0 8px;
+                }
+                        .video .test_cases .response p * {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        .video .test_cases .response .passed {
+                            color: var(--rgba-secondary);
+                        }
+                        .video .test_cases .response .failed {
+                            color
+                            : var(--rgba-danger);
+                        }
+             .video .output {
+                margin-left: 16px;
+            }
+             .video .settings {
+                 position: relative;
+             }
+                 .video .settings * {
+                     display: inline-block;
+                     vertical-align: top;
+                     font-weight: 300;
+                     color: var(--rgba-white);
+                     font-size: small;
+                }
+                .video .settings .play, .video .settings .pause {
+                    cursor: pointer;
+                }
+                .video .settings .play:hover, .video .settings .pause:hover {
+                    background-color: var(--rgb-danger);
+                    border-radius: 50%;
+                }
+                .video .settings .duration {
+                    position: absolute;
+                    right: 0;
+                }
+                .video .settings .playback_speed * {
+                    cursor: pointer;
+                }
+                .video .settings .playback_speed *:hover, .video .settings .playback_speed .selected {
+                    color: var(--rgb-danger);
+                }
+             .video .progress {
+                 background-color: var(--rgba-danger);
+                 width: 100%;
+                 position: absolute;
+                 right: 0;
+                 bottom: 1px;
+                 margin-bottom: 0;
+                 height: 16px;
+            }
+                .video .progress .indicator {
+                    position: relative;
+                    top: 0;
+                    cursor: pointer;
+                }
+         .history h3 {
+            padding: 0 8px;
+        }
+         .history ul {
+            list-style: none;
+            font-size: small;
+        }
+             .history ul li {
+                padding: 0 8px;
+                cursor: pointer;
+            }
+             .history ul li:hover,  .history ul li.selected  {
+                background-color: var(--rgba-grey);
+            }
+                 .history ul li * {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 8px;
+                }
+
+
+
+
+
+

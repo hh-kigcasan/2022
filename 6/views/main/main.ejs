@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Main</title>
+    <script>
+        $(document).ready(() => {
+            $('form').submit((e) => {
+                e.preventDefault();
+            });
+            // // Hide First
+            $('nav, section, #gear_icon, #active_status, #play_icon, #plus_icon, #chat_box, #chat, #scores, #logs').hide();
+            
+            // Animate one by one
+            $('nav').toggle("slide:right", () => {
+                $('#gear_icon').toggle("slide:right", () => {
+                    $('#play_icon').toggle("slide:right", () => {
+                        $('#plus_icon').toggle("slide:right", () => {
+                            $('#plus_icon').css('transform', `rotate(-360deg)`);
+                            $('#plus_icon').css('transition', `.5s linear`);
+                            $('#chat').toggle("slide:right");
+                        });
+                        $('#active_status').toggle("slide:right");
+                        $('#chat_box').toggle("slide:right");
+                        $('#logs').toggle("slide:right");
+                    });
+                    $('section').toggle("slide:right", () => {
+                        $('#scores').toggle("slide:right");
+                        $('#trophy_icon').css('transform', `scaleX(-1)`);
+                        $('#trophy_icon').css('transition', `1s linear`);
+                    });
+                });
+            });
+            
+            $('#plus_icon')
+            .mouseenter(() => {
+                $('#plus_icon').css('transform', `rotate(720deg)`);
+                $('#plus_icon').css('transition', `.8s linear`);
+            })
+            .mouseleave(() => {
+                $('#plus_icon').css('transform', `rotate(0deg)`);
+                $('#plus_icon').css('transition', `1.8s linear`);
+            });
+
+            const socket = io();
+
+            socket.emit('new_user', { id: $('#user_id').val(), name: $('#user_name').val() });
+
+            socket.on('data', (data) => {
+                const messages = data.messages;
+                const users = data.users;
+                const logs = data.logs;
+                let li_html = '';
+                let chat_html = '';
+                let log_chat = '';
+                for(let i = 0; i < users.length; i++) {
+                    li_html += `<li>${users[i].name} <span class="active">•</span></li>`;
+                } 
+
+                for(let i = 0; i < messages.length; i++) {
+                    chat_html = `<li><span class="green">${messages[i].name}: </span>${messages[i].message}</li>` + chat_html;
+                } 
+
+                for(let i = 0; i < logs.length; i++) {
+                    log_chat = `<li><span class="active">Marvin: </span>${logs[i]}</li>` + log_chat;
+                } 
+
+                $('#active_status').html(li_html);
+                $('#chat').html(chat_html);
+                $('#logs').html(log_chat);
+            });
+
+            $('form').on('change', 'input:text', () => {
+                const message = $('form').find('input:text').val();
+                socket.emit('message', { message: message });
+
+                $('form').find('input:text').val(' ');
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="/settings"><img src="images/gear_icon.png" alt="Gear Icon" id="gear_icon"></a>
+        <a href="/play"><img src="images/play_icon.png" alt="Play Icon" id="play_icon"></a>
+        <a href="/add_question"><img src="images/plus_icon.png" alt="Plus Icon" id="plus_icon"></a>
+    </nav>
+    <div id="active_status"></div>
+    <section>
+        <img src="images/trophy_icon.png" alt="Trophy Icon" id="trophy_icon">
+        <div id="scores">
+<% 
+    for(let i = 0; i < scores.length; i++) { 
+        let percentage = (scores[i].correct_answer / scores[i].number_item) * 100;
+        let color = '';
+        if(percentage <= 50) {
+            color = 'bg_red';
+        } else if(percentage <= 80) {
+            color = 'bg_orange';
+        } else {
+            color = 'bg_green';
+        }
+%>
+            <li><span class="red"><%= scores[i].subject_code %> <span class="black"><%= scores[i].subject_name %></span></span> <span class="grade <%= color %>"><%= scores[i].correct_answer %>/<%= scores[i].number_item %></span></li>
+<%  } %>
+        </div>
+    </section>
+    <div id="chat_box">
+        <div id="chat"></div>
+        <form action="" method="post">
+            <input type="text" name="message" placeholder="Enter a Message!"/>
+        </form>
+    </div>
+    <div id="logs"></div>
+    <input type="hidden" id="user_id" value="<%= user.id %>" />
+    <input type="hidden" id="user_name" value="<%= user.first_name %>">
+</body>
+</html>

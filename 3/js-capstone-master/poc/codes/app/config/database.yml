@@ -1,0 +1,13 @@
+engine: mysql
+host: localhost
+port: 8889
+user: root
+password: v88b22022
+database: athletes
+
+redis:
+  host: locahost
+  port: 123
+  ttl: 86400
+
+

@@ -1,0 +1,28 @@
+<%- include("../partials/header.ejs") %>
+        <input type = "text" name = "search_user" class = "search display-block" placeholder = "Search User">
+        <!-- START CODE FOR CONFIRMATION BOX -->
+        <div class = "confirm-box" id = "confirm-box">
+            <h2>Confirm Friend Request</h2>
+            <p>Send request</p>
+            <section>
+                <button class = "cancel">Cancel</button>
+                <button class = "confirm">Yes</button>
+            </section>
+        </div>
+
+        <div class = "confirm-box" id = "success-box">
+            <img src = "img/success.gif" id = "succes-gif">
+            <p>Request sent!</p>
+            <button id = "success-box-btn">Ok</button>
+        </div>
+        <!-- END CODE FOR CONFIRMATION BOX -->
+
+        <main id = "user-list">
+<% for(let i = 0; i < users.length; i++) { %> 
+            <section class = "user-detail display-block">
+                <p class = "display-inline-block"><%= users[i].first_name + " " + users[i].last_name %> </p>
+                <a href = "video" class = "connect display-inline-block link-button">Connect</a>
+            </section>
+<% } %> 
+        </main>
+<%- include("../partials/footer.ejs") %>

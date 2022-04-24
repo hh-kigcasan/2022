@@ -1,0 +1,16 @@
+<%- include('../partials/header_edit') %>
+        <body>
+                <%- include('../nav/users') %>
+                <div class = "error">
+<%  for(let index in message){
+%>
+        <p><%= message[index]%></p>
+<%  }
+%>
+                </div>
+                <form id = "container"   enctype = "multipart/form-data" action = "/charts/update" method = "POST">
+                <p class = "w-10">TITLE: <input class = "ml mr-5" type = "text" name = "title" value = <%= details.title%>><button id = "save">Save</button><button data-id = "<%= details.id%>" class = "pdf ml">Download</button></p> 
+                <input type = "hidden" id = "autokey" name = "autokey" value = "<%= details.id%>">
+                </form>
+        </body>
+<%- include('../partials/footer') %>

@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Marvin</title>
+    <script>
+        $(document).ready(() => {
+            // Hide First
+            $('#realtime_interaction_card').hide();
+            $('#monitor_success_card').hide();
+            $('article').hide();
+            $('#marvin_logo, #avatar').hide();
+            $('#feat1, #feat2').hide();
+
+            // Animate one by one
+            $('#realtime_interaction_card').toggle("slide:right", () => {
+                $('#monitor_success_card').toggle("slide:right", () => {
+                    $('article').toggle("slide:right");
+                    $('#avatar').toggle("slide:right");
+                    $('#marvin_logo').toggle("slide:right", () => {
+                        $('#feat1').toggle("slide:right", () => {
+                            $('#feat2').toggle("slide:right", typeWriter);
+                        });
+                    });
+                });
+            });
+
+            // Rotate avatar when hovered
+            $('#avatar')
+            .mouseenter(() => {
+                $('#avatar').css('transform', `rotate(360deg)`);
+                $('#avatar').css('transition', `1s linear`);
+            })
+            .mouseleave(() => {
+                $('#avatar').css('transform', `rotate(0deg)`);
+                $('#avatar').css('transition', `1s linear`);
+            });
+        });
+
+        let i = 0;
+        let txt = 'No more, lonely study session!';
+
+        function typeWriter() {
+            if(i < txt.length) {
+                $('article').append(`${txt.charAt(i++)}`);
+                if(txt.charAt(i) === ' ') {
+                    setTimeout(typeWriter, 300);
+                } else {
+                    setTimeout(typeWriter, 80);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <img src="images/marvin_logo.png" alt="Marvin Logo" id="marvin_logo"/>
+        <a href="/login">
+            <img src="images/avatar.png" alt="Avatar" id="avatar"/>
+        </a>
+    </nav>
+    <section>
+        <div id="feature_cards">
+            <div id="realtime_interaction_card">
+                <img src="images/feat1.png" alt="Interactive Assesment" id="feat1" />
+            </div>
+            <div id="monitor_success_card">
+                <img src="images/feat2.png" alt="Questionnaire Maker" id="feat2" />
+            </div>
+        </div>
+        <article></article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- Insert Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f179fb6516.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="./socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/turn.js"></script>
+    <script type="text/javascript" src="/js/bookViewer.js"></script>
+    <script type="text/javascript" src="/js/speechAPI.js"></script>>
+    <title>VirBook</title>
+  </head>
+  <body>
+    <!-- <nav>
+      <h1>VirBook</h1>
+      <ul>
+        <li class="navLink"><a class="selected" href="">Virtual Book</a></li>
+        <li class="navLink"><a href="">Shared Accounts</a></li>
+        <li class="navLink"><a href="">Account Settings</a></li>
+      </ul>
+    </nav> -->
+    <main style="margin: 10px">
+      <div class="maintitle">
+        <img class="logo" />
+        <p class="slogan">Make a Story with Others</p>
+        <p class="subslogan">A Collaborative Story Maker</p>
+        <p class="subslogan">Simple User Interface</p>
+        <p class="subslogan">Speech to Text API</p>
+      </div>
+      <div class="library">
+        <div class="bookonshelf">
+          <div id="sample-book" class="book hover"><textarea id="mv1" class="miniview">Book Title Here</textarea></div>
+        </div>
+        <img class="shelf" />
+        <div class="bookonshelf">
+          <div class="book hover"><textarea id="mv2" class="miniview">Sample</textarea></div>
+        </div>
+        <img class="shelf" />
+      </div>
+      
+    </main>
+
+    <!-- Modal Book Viewer Start -->
+    <div id="book" class="bookviewer">
+      <span id="closebook" class="closeBtn">&times;</span>
+      <div id="usersList">
+        <p id="listTitle">Online Users:</p>
+        <div id="onlineUsers"></div>
+      </div>
+      <div class="bookcontent">
+        <div id="storybook" class="flipbook">
+          <div class="hard">
+            <textarea
+              id="t1"
+              name="Title"
+              id="textboxTitle"
+              class="story-cover-title"
+              placeholder="Book Title Here"
+            ></textarea>
+          </div>
+          <div class="hard">Book</div>
+          <div class="page">
+            <textarea
+              id="t2"
+              class="storycontent"
+              placeholder="Once a upon a time"
+              maxlength="920"
+            ></textarea>
+          </div>
+          <div class="page">
+            <textarea
+              id="t3"
+              class="storycontent"
+              placeholder="Page Content"
+              maxlength="920"
+            ></textarea>
+          </div>
+        </div>
+        <!-- Record Start -->
+        <div class="bookfooter">
+          <div>
+            <!-- Save Book Icon-->
+            <button>
+              <i id="save-book-btn" class="fas fa-save fa-2x"></i>
+            </button>
+            <p>Save Book</p>
+          </div>
+          <div>
+            <!-- Recorde Icon -->
+            <button>
+              <i id="record-btn" class="fas fa-microphone fa-2x"></i>
+            </button>
+            <p id="instructions">Click the Microphone.</p>
+          </div>
+          <div>
+            <!-- Add Page Icon -->
+            <button>
+              <i id="add-page-btn" class="fas fa-plus fa-2x"></i>
+            </button>
+            <p>Add Page</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Book Viewer End -->
+  </body>
+
+</html>

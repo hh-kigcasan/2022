@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" type = "text/css" href = "stylesheets/fonts.css">
+        <link rel = "stylesheet/less" type = "text/css" href = "stylesheets/style.less">
+        <link rel = "stylesheet/less" type = "text/css" href = "stylesheets/style2.less">
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/less.js/4.0.0/less.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "scripts/main.js"></script>
+        <title>Friend's List Page</title>
+    </head>
+    <body>
+        <nav id = "navbar-container" class = "display-block">
+            <img src = "img/logo.png">
+            <a href = "dashboard.html">Home</a>
+            <a href = "friends.html">Friends</a>
+            <a href = "login.html" class = "logout-link">Logout</a>
+        </nav>
+        <input type = "text" name = "search_user" class = "search display-block" placeholder = "Search User">
+        <!-- START CODE FOR CONFIRMATION BOX -->
+        <div class = "confirm-box" id = "confirm-box">
+            <h2>Confirm Friend Request</h2>
+            <p>Send request</p>
+            <section>
+                <button class = "cancel">Cancel</button>
+                <button class = "confirm">Yes</button>
+            </section>
+        </div>
+
+        <div class = "confirm-box" id = "success-box">
+            <img src = "img/success.gif" id = "succes-gif">
+            <p>Request sent!</p>
+            <button id = "success-box-btn">Ok</button>
+        </div>
+        <!-- END CODE FOR CONFIRMATION BOX -->
+
+        <main id = "user-list">
+            <section class = "user-detail display-block">
+                <p class = "display-inline-block">User1</p>
+                <button class = "add display-inline-block">Add User</button>
+            </section>
+            <section class = "user-detail display-block">
+                <p class = "display-inline-block">User2</p>
+                <a href = "video_call.html" class = "connect display-inline-block link-button">Connect</a>
+            </section>
+            <section class = "user-detail display-block">
+                <p class = "display-inline-block">User3</p>
+                <a href = "video_call.html" class = "connect display-inline-block link-button">Connect</a>
+            </section>
+            <section class = "user-detail display-block">
+                <p class = "display-inline-block">User4</p>
+                <button class = "add display-inline-block">Add User</button>
+            </section>
+        </main>
+    </body>
+</html>

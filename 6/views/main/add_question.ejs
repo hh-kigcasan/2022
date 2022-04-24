@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input[type="checkbox"] {
+            display: inline-block;
+        }
+        textarea {
+            width: 500px;
+            height: 100px;
+        }
+        h4 {
+            display: inline-block;
+        }
+    </style>
+    <link rel="stylesheet" href="stylesheets/add_question.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Add Questions</title>
+    <script>
+        $(document).ready(() => {
+            $('#form').submit((e) => {
+                e.preventDefault();
+            })
+            // // Hide First
+            $('.container, h3, form, div, textarea, #marvin_logo, #play_icon, nav').hide();
+
+            // Animate one by one
+            $('h3').toggle("slide:right", () => {
+                $('#form').toggle("slide:right", () => {
+                    $('nav').toggle("slide:right");
+                    $('#subject_details').toggle("slide:right", () => {
+                        $('textarea').toggle('slide:right', () => {
+                            $('#play_icon').toggle('slide:right', () => {
+                                $('#play_icon').css('transform', `scaleX(-1)`);
+                                $('#play_icon').css('filter', `invert(1)`);
+                                $('#play_icon').css('transition', `1s linear`);
+                            });
+                            $('#marvin_logo').toggle(2000);
+                        });
+                    });
+                    $('#buttons').toggle("slide:right");
+                });
+            });
+
+            $('.accept').click(() => {
+                $('.container, #shadow').hide();
+            });
+        });
+    </script>    
+    <script src="scripts/text_to_questions.js"></script>
+</head>
+<body>
+    <div id="shadow"></div>
+    <div class="container">
+        <div class="cookiesContent" id="cookiesPopup">
+            <img src="https://cdn0.iconfinder.com/data/icons/seo-outline-black-part-3/128/search_Magnifying_Glass_Zoom_Spy_Hacker_Malware_criminal_Security-512.png" alt="cookies-img" id="logo"/>
+            <p></p>
+            <button class="accept">Okay!</button>
+        </div>
+    </div>
+    <h3>Tip: Leave subject code blank if creating new subject.</h3>
+    <form action="#" method="post" id="form">
+        <div id="subject_details">
+            <input type="text" id="subject_name" placeholder="Subject Name"/>
+            <input type="text" id="subject_code" placeholder="Subject Code"/>
+        </div>
+        <img src="images/marvin_logo.png" alt="Marvin Logo" id="marvin_logo" />
+        <textarea name="my_notes"></textarea>
+        <div id="buttons">
+            <input type="submit" value="Generate Questions" id="add" />
+        </div>
+    </form>
+    <div id="new_container"></div>
+    <nav>
+        <a href="/main"><img src="images/play_icon.png" alt="Play Icon" id="play_icon"></a>
+    </nav>
+</body>
+</html>

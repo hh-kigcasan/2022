@@ -1,0 +1,50 @@
+<div
+    class="modal fade"
+    id="sensor"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Live Sensors</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4" id="sensorbody">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Site Tech <i class="bi bi-laptop"></i></i></th>
+                            <th scope="col">timestamp <i class="bi bi-watch"></i></i></th>
+                            <th scope="col">Longitude <i class="bi bi-globe"></i></th>
+                            <th scope="col">Latitude <i class="bi bi-globe2"></i></th>
+                            <th scope="col">Altitude <i class="bi bi-arrow-up-circle-fill"></i></th>
+                            <th scope="col">Speed <i class="bi bi-speedometer2"></i></th>
+                            <th scope="col">Heading <i class="bi bi-compass"></i></i></th>
+                            <th scope="col">Signal <i class="bi bi-wifi"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="sensor-data">
+                        <% users.map(user=>{ %>
+                        <tr id="<%= user.username %>">
+                            <th scope="col" class="text-start">
+                                <img src="./../../assets/images/<%= user.avatar %>" /><%= user.username %>
+                            </th>
+                            <td class="timestamp" scope="col">1650737354961</td>
+                            <td class="longitude" scope="col">122.5752449</td>
+                            <td class="latitude" scope="col">10.7181629</td>
+                            <td class="altitude" scope="col">66.599998474121</td>
+                            <td class="speed" scope="col">0.07337933033704758</td>
+                            <td class="heading" scope="col">302.277404785156</td>
+                            <td class="status" scope="col"><i class="bi bi-circle-fill"></i></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

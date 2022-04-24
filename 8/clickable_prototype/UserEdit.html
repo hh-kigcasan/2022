@@ -1,0 +1,35 @@
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8">
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <nav>
+            DOJO
+            <ul>
+                <li><a href = "UserDashboard.html">Dashboard</a></li>
+                <li><a href = "UserEdit.html">Profile</a></li>
+            </ul>
+            <a href = "UserLogin.html" class = "logout">Log off</a>
+        </nav>
+        <h1>Edit Profile</h1>
+        <div id = "wrapper"> 
+            <form action = "UserEdit.html" method = "post"> 
+                <h2>Edit Information</h2>
+                <labeL>Email Address:</labeL><input type = "text" id = "email" name = "email" >
+                <labeL>First Name:</labeL><input type = "text" id = "fName" name = "fName">
+                <labeL>Last Name:</labeL><input type = "text" id = "lName" name = "lName">
+                <input class = "submit" type = "submit" value = "Save">
+            </form>
+        </div>
+        <div id = "wrapper"> 
+            <form action = "UserEdit.html" method = "post"> 
+                <h2>Change Password</h2>
+                <labeL>Old Password:</labeL><input type = "password" id = "oPassword" name = "oPassword">
+                <labeL>Password:</labeL><input type = "password" id = "password" name = "password">
+                <labeL>Confirm Password:</labeL><input type = "password" id = "cPassword" name = "cPassword"> 
+                <input class = "submit" type = "submit" value = "Save">
+            </form>
+        </div>
+    </body>
+      

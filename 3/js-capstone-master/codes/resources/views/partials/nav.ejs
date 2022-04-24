@@ -1,0 +1,24 @@
+<nav>
+    <p>Logged in as: <span class="username"><%= data.user.username %></span><span>#<%= data.user.id %></span></p>
+<%
+    if (!data.user.is_admin) {
+%>
+    <p>No. of Challenges taken: <span><%= data.ranking !== undefined ? data.ranking.no_of_challenges_taken : `0/${data.total_no_of_challenges}`%></span></p>
+    <p>Total Duration: <span><%= data.ranking !== undefined ? data.ranking.total_duration : '00:00:00'%></span></p>
+<%
+    }
+%>
+
+    <div>
+<%
+    if (!data.user.is_admin) {
+%>
+    <a href="/rankings">Rankings</a>
+    <a href="/profile">Profile</a>
+<%
+    }
+%>
+
+        <a href="/logout" class="logout">Log out</a>
+    </div>
+</nav>

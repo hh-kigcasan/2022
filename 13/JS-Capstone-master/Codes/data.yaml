@@ -1,0 +1,17 @@
+database: "postgres"
+
+postgres:
+  host: "localhost"
+  user: "postgres"
+  port: 5432 #port number for postgres server
+  password: "pgAdmin_password"
+  database: "v_caption"
+
+sql: 
+  host: "localhost"
+  user: "root"
+  port: 3306 #port number for apache server
+  password: ""
+  database: "" #enter database name
+
+enable_profiler: 1 #0 for disable, 1 for enable... Stop server if value is change, then run it again.

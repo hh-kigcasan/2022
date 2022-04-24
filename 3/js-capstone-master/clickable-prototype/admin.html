@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body class="admin">
+    <nav>
+        <p>Logged in as: <span class="username">Admin</span></p>
+        <div>
+            <a href="login.html" class="logout">Log out</a>
+        </div>
+    </nav>
+    <section class="rankings">
+        <h3>Rankings</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>No. of Challenges Taken</th>
+                <th>Total Duration</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Kim</td>
+                <td>5/5</td>
+                <td>45minutes 30seconds</td>
+            </tr>
+            <tr class="selected">
+                <td>2</td>
+                <td>Cloud</td>
+                <td>5/5</td>
+                <td>50minutes</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Marie</td>
+                <td>5/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Gem</td>
+                <td>5/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Chasingbugs (You)</td>
+                <td>5/5</td>
+                <td>1hour 30minutes</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>James</td>
+                <td>3/5</td>
+                <td>45minutes 30seconds</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Andrea</td>
+                <td>3/5</td>
+                <td>50minutes</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Stephen</td>
+                <td>3/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Amie</td>
+                <td>3/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Justin</td>
+                <td>2/5</td>
+                <td>45minutes 30seconds</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Clem</td>
+                <td>2/5</td>
+                <td>50minutes</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Hanny</td>
+                <td>2/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Michael</td>
+                <td>2/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Josh</td>
+                <td>2/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Yna</td>
+                <td>2/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Justin</td>
+                <td>2/5</td>
+                <td>45minutes 30seconds</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Clem</td>
+                <td>2/5</td>
+                <td>50minutes</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Hanny</td>
+                <td>2/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Michael</td>
+                <td>2/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Josh</td>
+                <td>2/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Yna</td>
+                <td>2/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Hanny</td>
+                <td>2/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Michael</td>
+                <td>2/5</td>
+                <td>1hour</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Josh</td>
+                <td>2/5</td>
+                <td>59minutes</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Precious</td>
+                <td>2/5</td>
+                <td>1hour</td>
+            </tr>
+        </table>
+        <div class="pagination">
+            <a href="admin.html">Previous</a>
+            <a href="admin.html">Next 25</a>
+        </div>
+    </section>
+    <section class="history">
+        <div class="video">
+            <p class="problem"><span>Challenge 2:</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            <form class="editor">
+                <p>function foo(data) {</p>
+                <textarea name="code" placeholder="Place your code here" disabled></textarea>
+                <p>}</p>
+            </form>
+            <div class="test_cases">
+                <h3>Testcases</h3>
+                <div class="response">
+                    <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                    <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                    <p class="failed"><span class="iconify" data-icon="system-uicons:cross-circle"></span> [1, 2, 3, 4, 5]</p>
+                    <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                </div>
+            </div>
+            <div class="output">
+                <h3>Output</h3>
+                <div class="response">
+                    <p>[1, 2, 3, 4, 5]</p>
+                    <p>[1, 2, 3, 4, 5]</p>
+                    <p>[1, 2, 3, 4, 5]</p>
+                    <p>[1, 2, 3, 4, 5]</p>
+                </div>
+            </div>
+            <div class="settings">
+                <span class="iconify play" data-icon="gg:play-button-o" data-height="16"></span>
+                <p class="playback_speed">
+                    <span class="selected">1x</span>
+                    <span>2x</span>
+                    <span>4px</span>
+                </p>
+                <p class="duration">00:00:00</p>
+            </div>
+            <div class="progress">
+                <span class="iconify indicator" data-icon="bxs:square" data-height="16"></span>
+            </div>
+        </div>
+        <h3>History</h3>
+        <ul>
+            <li><span class="iconify" data-icon="gg:play-button-o"></span><span>Challenge 1</span><span class="duration">00:00:00</span></li>
+            <li class="selected"><span class="iconify" data-icon="gg:play-stop-o"></span><span>Challenge 2</span><span class="duration">00:00:00</span></li>
+            <li><span class="iconify" data-icon="gg:play-button-o"></span><span>Challenge 3</span><span class="duration">00:00:00</span></li>
+            <li><span class="iconify" data-icon="gg:play-button-o"></span><span>Challenge 4</span><span class="duration">00:00:00</span></li>
+            <li><span class="iconify" data-icon="gg:play-button-o"></span><span>Challenge 5</span><span class="duration">00:00:00</span></li>
+        </ul>
+    </section>
+</body>
+</html>

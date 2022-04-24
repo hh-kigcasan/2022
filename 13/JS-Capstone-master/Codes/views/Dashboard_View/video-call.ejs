@@ -1,0 +1,28 @@
+<%- include("../partials/header.ejs") %>
+        <article id = "user-join-msg" class = "display-none"></article>
+        <p id = "user-name" class = "display-none"><%= user.first_name  %> </p>
+        <p id = "room-id" class = "display-none"><%= roomId %></p>
+        <p id = "sess-id" class = "display-none"><%= sess_id %></p>
+        <main id = "user-video" class = "display-inline-block">
+            <%- include("../partials/select_lang.ejs") %>
+            <div id = "video-grid"></div>
+            <section id = "video-buttons" class = "display-block">
+                <button id = "start" class = "display-inline-block"><img src = "/img/vidcam.png"></button>
+                <button id = "record" disabled class = "display-inline-block" value = "Record"><img src = "/img/record.png"></button>
+                <button id = "mic" class = "display-inline-block" value = "off"><img src = "/img/mic.png"></button>
+            </section>
+            <div id = "echo-cancel">
+                <p>Echo cancellation: <input type="checkbox"  checked id="echoCancellation" /></p>
+            </div>
+            <div><span id = "errorMsg"></span></div>
+            <textarea id = "subtitle"></textarea>
+        </main>
+
+        <aside id = "chatbox" class = "display-inline-block">
+            <section class = "display-block">
+                <textarea id = "user-chat" class = "display-inline-block"></textarea>
+                <button id = "msg-send"class = "display-inline-block">Send</button>
+            </section>
+        </aside>
+        <a href = "dashboard.html" class = "link-button display-block" id = "end-call">End Call</a>
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+        <body>
+                <%- include('../nav/users') %>
+                <div class = "error">
+<%  for(let index in message){
+%>
+        <p><%= message[index]%></p>
+<%  }
+%>
+                </div>
+                <form id = "container"   enctype = "multipart/form-data" action = "/charts/save" method = "POST">
+                <p class = "w-10">TITLE: <input class = "ml mr" type = "text" name = "title"><button id = "save">Save</button></p> 
+                </form>
+
+<%- include('../partials/footer') %>

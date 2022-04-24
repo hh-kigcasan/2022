@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+    <body>
+        <%- include('../nav/users') %>
+        <div class = "error">
+<%  for(let index in message){
+%>
+            <p><%= message[index]%></p>
+<%  }
+%>
+        </div>
+        <h1>&nbsp;<a href = "/charts/new"><button class ="logout w-1">Create Org Chart</button></a></h1>
+
+        <section class = "w-10 inline mh">
+<%  for(let index in details){
+        details[index].data = JSON.parse(details[index].data);
+%>
+            <div class = "box ml mt w-3 inline h-400 border overflow">
+                <p class = "center"><%= details[index].title%></p>
+<%      for(let index2 in details[index].data.name){
+%>
+                <div class = "sm-chart" style = "top: <%= (details[index].data.top[index2]/2.5) + 5 %>px; left: <%= (details[index].data.left[index2]/3)- 40%>px">
+                    <img src = "<%=base_url%>/images/<%= details[index].data.path[index2]%>" alt ="#">  
+                    <p class = "center"><%= details[index].data.name[index2]%> </p>
+                    <p class = "center"><%= details[index].data.position[index2]%> </p>
+                </div>
+<%      }
+%>
+                <button class = "show" data-id = "<%= details[index].id%>" >Edit</button><button data-id = "<%= details[index].id%>" class = "download">Download</button>
+            </div>          
+<%  }
+%>
+        </section>
+<%- include('../partials/footer') %>

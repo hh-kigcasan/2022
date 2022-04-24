@@ -1,0 +1,156 @@
+body{
+    background-color: rgb(248, 248, 248);
+    font-family: Arial, Helvetica, sans-serif
+}
+#wrapper_replays_dashboard{
+    padding: 20px 30px;
+}
+.replays_section{
+    width: 100%;
+    height: 550px;
+    outline: 1px solid black;
+}
+.video_player, .options_section{
+    display: inline-block;
+    outline: 1px solid black;
+    vertical-align: top;
+}
+.video_player{
+    width: calc(100% - 10px - 10px - 20px - 300px - 4px);
+}
+.display{
+    width: 100%;
+    height: 500px;
+    outline: 1px solid black;
+}
+    .intro h1, .intro p{
+        margin: 0;
+    }
+    .intro h1{
+        padding: 120px 50px 10px 50px;
+    }
+    .intro p{
+        padding: 10px 50px 10px 50px;
+    }
+    .display iframe{
+        border: none;
+        width: 100%;
+        height: 500px;
+        transform-origin: 0 0;
+    }
+    .controls{
+        outline: 1px solid black;
+    }
+    .play_pause{
+        padding: 0 10px;
+        font-size: 37.5px;
+    }
+    .pause_btn{
+        display: none;
+    }
+
+.options_section{
+    width: 320px;
+    height: 540px;
+    padding: 10px 0 0 0;
+    margin: 0 0 0 19px;
+    text-align: center;
+}
+    .start_intro{
+        padding: 170px 20px;
+        font-size: 24px;
+    }
+    .options_section select{
+        width: calc(50% - 30px);
+        margin: 5px;
+    }
+    .options_section select + select{
+        margin-left: 5px;
+    }
+    .options_section h4{
+        margin: 0;
+        padding: 20px 5px 5px 5px;
+    }
+    .options_section p{
+        margin: 0;
+        padding: 5px;
+    }
+    .options_section .webpage_data{
+        visibility: hidden;
+    }
+    .options_section button{
+        margin: 15px;
+    }
+    .video_list{
+        /* outline: 1px solid black; */
+        height: 333px;
+        overflow-y: auto;
+    }
+        .video_list .user_records{
+            width: 100%;
+            display: block;
+            padding: 10px;
+            margin: 0;
+            /* outline: 1px solid black; */
+            position: relative;
+            text-align: left;
+        }
+            .video_list span:first-child{
+                position: absolute;
+                right: 10px;
+            }
+            .video_list .user_records > span + span{
+                display: block;
+                margin: 5px 0 0 0;
+            }    
+.table_wrapper{
+    margin: 60px auto;
+    /* outline: 1px solid black; */
+    position: relative;
+}
+    .table{
+        height: 200px;
+        overflow-y: auto;
+        margin: 30px auto;
+        /* outline: 1px solid black; */
+        width: fit-content;
+    }
+        .table table{
+            margin: 0;
+            display: inline-block;
+            /* outline: 1px solid black; */
+        }
+        .table thead{
+            position: absolute;
+            top: -30px;
+            height: 20px;
+            color: white;
+        }
+        .table th{
+            background-color: rgb(63, 63, 63);
+        }
+        .table th, .table td{
+            width: 200px;
+            outline: 1px solid black;
+            padding: 5px;
+            height: 20px;
+        }
+        .table th:first-child, .table td:first-child{
+            width: 350px;
+        }
+.chart_section{
+    text-align: center;
+    display: none;
+}
+    .heatmap{
+        width: 1000px;
+        height: 500px;
+        outline: 1px solid black;
+        margin: auto;
+    }
+        .heatmap iframe{
+            border: none;
+            width: 100%;
+            height: 500px;
+            transform-origin: 0 0;
+        }

@@ -1,0 +1,58 @@
+* {
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    font-size: small;
+}
+form, section, div {
+    display: inline-block;
+    vertical-align: top;
+}
+form {
+    width: 30%;
+    text-align: end;
+}
+    textarea {
+        width: 98%;
+        min-height: 200px;
+    }
+section {
+    width: 20%;
+    height: 200px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    padding: 8px;
+    overflow-y: auto;
+}
+    h3 {
+        margin-top: 0;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+        li {
+            border-bottom: 1px dotted black;
+            cursor: pointer;
+            position: relative;
+        }
+        li:hover {
+            background: lightyellow;
+        }
+        .remove {
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+div {
+    width: 30%;
+    min-height: 200px;
+    border: 1px solid black;
+    position: relative;
+}
+    div p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 0;
+        background-color: lightyellow;
+    }

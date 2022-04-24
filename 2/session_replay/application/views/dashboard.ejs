@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replays Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-contour.v1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+    <style></style>
+</head>
+<body>
+    <div id="wrapper_replays_dashboard">
+        <div class="replays_section">
+            <div class="video_player">
+                <div class="display" >
+                    <div class="intro">
+                        <h1>Session replay</h1>
+                        <p>From Wikipedia, the free encyclopedia</p>
+                        <p>Session replay is the ability to replay a visitor's journey on a web site or within a mobile application or web application. Replay can include the user's view (browser or screen output), user input (keyboard and mouse inputs), and logs of network events or console logs. Session replay is supposed to help improve customer experience[1] and help identify obstacles in conversion processes on websites. However, it can also be used to study a website's usability, customer behavior, and the handling of customer service questions as the customer journey, with all interactions, can be replayed. Some organizations also use this capability to analyse fraudulent behavior on websites.</p>
+                    </div>
+                    <iframe></iframe>
+                </div>
+                <div class="controls">
+                    <div class="play_btn play_pause">▶️</div>
+                    <div class="pause_btn play_pause">❚❚</div>
+                    <div class=""></div>
+                </div>
+            </div>
+            <section class="options_section">
+                <form action="/process_search" method="post">
+                    <select class="webpage_select" name="webpage">
+                        <option value="" disabled selected>Select Webpage</option>
+<%_ for (let i = 0; i < webpages.length; i++) { _%>
+                        <option value="<%= webpages[i].webpage_id %>"><%= webpages[i].url %></option>
+<%_ } _%>
+                    </select>
+                    <select class="order_by" name="order_by">
+                        <option value="0">Newest to Oldest</option>
+                        <option value="1">Oldest to Newest</option>
+                    </select>
+                </form>
+                <div class="start_intro">To start viewing session replays, select from any webpage from the dropdown menu.</div>
+                <div class="webpage_data">
+                    <h4>Webpage: www.example.com</h4>
+                    <p>Total recordings: 100</p>
+                    <p class="current_users">Current users: 0</p>
+                    <p>Users average visiting time: 25mins</p>
+                    <button class="heatmap_btn" type="button">Show Heatmap</button>
+                </div>
+                <div class="video_list">
+                </div>
+            </section>
+        </div>
+        <div class="table_wrapper">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Webpage</th>
+                            <th>Total Recordings</th>
+                            <th>Users Ave. Visiting Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<%_ for (let i = 0; i < webpages.length; i++) { _%>
+                        <tr>
+                            <td id="webpage_<%= webpages[i].webpage_id %>"><%= webpages[i].url %></td>
+                            <td><%= webpages[i].total_users %></td>
+                            <td><%= webpages[i].ave_time %></td>
+                            <td><button class="heatmap_btn" heatmap_id="<%= webpages[i].webpage_id %>" type="button">Show Heatmap</button></td>
+                        </tr>
+<%_ } _%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <section class="chart_section">
+            <h3></h3>
+            <div class="heatmap">
+                <iframe></iframe>
+                <div id="heatmap_svg_container"></div>
+            </div>
+            <div class="heatmap_legend"></div>
+        </section>
+    </div>
+</body>
+</html>

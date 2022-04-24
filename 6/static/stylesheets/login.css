@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px solid red; */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form {
+    width: 300px;
+    height: 300px;
+    margin: 25vh auto 50px auto;
+    position: relative;
+    border: 3px solid #2a2b2a;
+    border-radius: 10px;
+    box-shadow: -20px 20px #e5446d;
+    padding-top: 60px;
+    background-color: #f8f4e3;
+}
+    form > img {
+        position: absolute;
+        left: 33%;
+        width: 100px;
+        top: -50px;
+    }
+    form > input {
+        width: 80%;
+        display: block;
+        margin: 20px auto;
+        padding: 5px 10px;
+        border-radius: 8px;
+        background-color: #706c61;
+        color: #f8f4e3;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    ::placeholder {
+        color: #f8f4e3;
+        opacity: 0.5;
+    }
+    form > input[type="submit"] {
+        margin-top: 50px;
+        background-color: #ff8966;
+        color: #f8f4e3;
+    }
+    form > h2 {
+        text-align: center;
+    }
+
+a {
+    text-align: center;
+    display: block;
+    width: 100%;
+
+}
+
+.cookiesContent {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f4e3;
+    color: #2a2b2a;
+    text-align: center;
+    border-radius: 20px;
+    padding: 50px;
+    border: 3px solid #2a2b2a;
+    border-radius: 10px;
+    box-shadow: -20px 20px #e5446d;
+    z-index: 2;
+}
+    img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+    p {
+        letter-spacing: 2px;
+        font-size: 18px;
+        color: red;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    button.accept {
+        margin-top: 50px;
+        background-color: #ff8966;
+        color: #f8f4e3;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #f8f4e3;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+#shadow {
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #2a2b2a;
+    opacity: 0.5;
+    z-index: 1;
+}

@@ -1,0 +1,23 @@
+#application config
+port: 8000
+
+session: 
+  name: '_redisPractice'
+  secret: keyboardkitteh
+  resave: false
+  saveUninitialized: false
+
+#databases config
+mysql:
+  host: localhost
+  user: sqluser
+  password: password
+  database: mvc_login
+  port: 3306
+
+postgres:
+  user: postgres
+  host: 127.0.0.1
+  database: mvc_login
+  password: postgres123
+  port: 5432

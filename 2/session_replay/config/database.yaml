@@ -1,0 +1,27 @@
+---
+# declare the database credentials postgres
+DATABASE_POSTGRES:
+  CREDENTIALS:
+    host: 'localhost'
+    user: 'postgres'
+    password: 'acd1355'
+    database: ''
+    port: 5432
+  NAME: 'postgres'
+
+# declare the database credentials mysql
+DATABASE_MYSQL:
+  CREDENTIALS:
+    host: 'localhost'
+    user: 'root'
+    password: 'acd1355'
+    database: 'hh_session_replays'
+    port: 3306
+  NAME: 'mysql'
+
+# declare the database credentials redis
+DATABASE_REDIS:
+  host: 'localhost'
+  port: 6379
+  ttl: 86400
+...

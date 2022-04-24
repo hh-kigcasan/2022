@@ -1,0 +1,15 @@
+session:
+  secret: bacon_pancakes
+  name: redis_session
+  resave: false
+  saveUninitialized: true
+  cookie:
+    secure: false
+body_parser:
+  extended: true
+directories:
+  public: resources/assets
+  views: resources/views
+view_engine: ejs
+port: 3003
+base_url: http://localhost:3003/

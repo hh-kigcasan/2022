@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background: url("./../images/atmos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+main {
+    height: 85%;
+}
+
+main > aside {
+    overflow: auto;
+    height: 100%;
+    /* margin-bottom: 50px; */
+    scrollbar-color: rgba(0, 0, 0, 0.493) rgba(0, 128, 0, 0.381);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.card {
+    background: transparent;
+}
+
+.card-img-top {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.glow {
+    /* font-size: 80px; */
+    color: rgba(0, 128, 0, 0.463);
+    text-align: center;
+    animation: glow 5.2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 3px rgb(0, 57, 0), 0 0 5px rgb(0, 57, 0), 0 0 8px black, 0 0 10px black, 0 0 20px black,
+            0 0 30px black, 0 0 70px black;
+    }
+
+    to {
+        text-shadow: 0 0 3px rgb(0, 57, 0), 0 0 5px lime, 0 0 8px lime, 0 0 10px lime, 0 0 20px lime, 0 0 30px lime,
+            0 0 40px lime;
+    }
+}
+
+.bg-green {
+    background-color: rgba(0, 128, 0, 0.086);
+}

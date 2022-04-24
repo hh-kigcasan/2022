@@ -1,0 +1,478 @@
+:root {
+    --rgb-primary: rgb(13, 116, 231);
+    --rgb-secondary: rgb(47, 187, 79);
+    --rgb-black: rgb(36, 41, 45);
+    --rgb-dark: rgb(43, 49, 55);
+    --rgb-white: rgb(255, 255, 255);
+    --rgb-grey: rgb(235, 235, 234);
+    --rgb-danger: rgb(182, 29, 3);
+
+    --rgba-primary: rgba(13, 116, 231, 0.80);
+    --rgba-secondary: rgba(47, 187, 79, 0.80);
+    --rgba-black: rgba(36, 41, 45, 0.90);
+    --rgba-dark: rgba(43, 49, 55, 0.90);
+    --rgba-white: rgba(255, 255, 255, 0.80);
+    --rgba-grey: rgba(235, 235, 234, 0.80);
+    --rgba-danger: rgb(182, 29, 3, 0.80);
+}
+* {
+    //outline: 1px dashed pink;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+body {
+    min-height: 1080px;
+    font-family: 'Open Sans', sans-serif;
+    background: radial-gradient(var(--rgb-white), var(--rgb-grey));
+}
+    a, span, input, p, th, td {
+        font-size: small;
+        font-weight: 300;
+        color: var(--rgb-dark);
+    }
+    h1, h2, h3, th {
+        font-weight: 500;
+        color: var(--rgb-dark)
+    }
+    a {
+        color: var(--rgba-primary);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .no_user form {
+        width: 20%;
+        text-align: center;
+        margin: 200px auto 0 auto;
+    }
+        .no_user form * {
+            width: 100%;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .no_user form input {
+            padding: 8px;
+        }
+        .no_user form input[type=submit] {
+            background-color: var(--rgb-secondary);
+            color: var(--rgb-white);
+            cursor: pointer;
+        }
+        .no_user form input[type=submit]:hover {
+            background-color: var(--rgba-secondary);
+        }
+        .no_user form p {
+            color: red;
+            display: none;
+        }
+nav {
+    width: 100%;
+    height: 35px;
+    background-color: var(--rgba-dark);
+    padding: 5px;
+    position: relative;
+}
+    nav > * {
+        display: inline-block;
+        color: var(--rgb-white);
+        margin: 0 8px;
+        font-weight: 400;
+    }
+        nav p span {
+            font-size: x-small;
+            color: var(--rgba-white);
+        }
+        nav p span.username {
+            font-size: small;
+        }
+    nav div {
+        position: absolute;
+        right: 0;
+    }
+        nav div a {
+            padding: 8px;
+            background-color: var(--rgba-dark);
+            color: var(--rgba-white);
+        }
+        nav div a.logout {
+            margin-left: 8px;
+            background-color: var(--rgb-danger);
+        }
+section {
+    padding: 8px;
+}
+    section * {
+        margin-bottom: 8px;
+    }
+    section table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    section th, section td {
+        background-color: var(--rgb-dark);
+        color: var(--rgba-white);
+        text-align: start;
+        padding: 4px 8px;
+        border-bottom: 1px solid var(--rgba-secondary);
+    }
+    section .pagination {
+        width: fit-content;
+    }
+        section .pagination a {
+            padding: 8px;
+            font-size: x-small;
+            color: var(--rgba-white);
+            background-color: var(--rgb-dark);
+        }
+.available_challenges, .challenge, .history {
+    height: 1080px;
+    padding: 8px 0;
+    display: inline-block;
+    vertical-align: top;
+}
+.available_challenges {
+    width: 250px;
+    background-color: var(--rgb-dark);
+    box-shadow: 4px 0 0 0 var(--rgb-secondary);
+}
+    .available_challenges h3, .available_challenges p {
+        padding: 0 8px;
+        margin-bottom: 8px;
+        color: var(--rgba-white);
+    }
+    .available_challenges p {
+        position: relative;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .available_challenges p:hover, .available_challenges p.selected {
+        background-color: var(--rgb-secondary);
+    }
+        .available_challenges p:hover a, .available_challenges p.selected a{
+            color: var(--rgba-white);
+            text-decoration: underline;
+        }
+    .available_challenges a {
+        position: absolute;
+        right: 8px;
+        color: var(--rgb-secondary);
+    }
+.challenge {
+    width: 700px;
+    background-color: var(--rgba-dark);
+    padding: 4px 0 4px 4px;
+    box-shadow: 4px 0 0 0 var(--rgba-dark);
+}
+    .challenge .problem {
+        color: var(--rgba-white);
+        text-align: justify;
+    }
+        .challenge .problem span {
+            color: var(--rgb-secondary);
+            font-weight: 500;
+    }
+    .challenge .editor {
+        width: 100%;
+        height: 500px;
+        background-color: var(--rgb-dark);
+        margin: 8px 0;
+        position: relative;
+    }
+        .challenge .editor p {
+            padding: 8px 0 0 8px;
+            font-weight: 500;
+            color: var(--rgba-white);
+            font-family: "Courier New";
+        }
+        .challenge .editor textarea {
+            width: 100%;
+            height: 88%;
+            background-color: transparent;
+            color: var(--rgba-grey);
+            padding: 8px 16px;
+            outline: none;
+        }
+        .challenge .editor input {
+            position: absolute;
+            right: 0;
+            padding: 8px;
+            background-color: var(--rgb-secondary);
+            color: var(--rgba-white);
+            cursor: pointer;
+        }
+        .challenge .editor input:hover {
+            background-color: var(--rgba-secondary);
+        }
+        .challenge .test_cases, .challenge .output {
+            width: 49%;
+            height: 485px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: var(--rgb-dark);
+            padding: 8px;
+            overflow-y: auto;
+        }
+        .challenge .output {
+            margin-left: 8px;
+        }
+            .challenge .test_cases h3, .challenge .output h3 {
+                color: var(--rgba-white);
+                font-size: small;
+                margin-bottom: 8px;
+            }
+            .challenge .test_cases .response p.passed {
+                font-weight: 300;
+                color: var(--rgba-secondary);
+            }
+            .challenge .test_cases .response p.failed {
+                font-weight: 300;
+                color: var(--rgba-danger);
+            }
+            .challenge .output .response p {
+                color: var(--rgba-white);
+                font-weight: 300;
+            }
+.history {
+    width: calc(100% - 960px);
+    box-shadow: 4px 0 0 0 var(--rgba-dark);
+    background-color: var(--rgba-white);
+    padding: 0;
+}
+    .history .video {
+        width: 100%;
+        height: 420px;
+        padding: 2px;
+        border: 1px solid var(--rgb-black);
+        border-bottom: 0;
+        background-color: var(--rgba-black);
+        position: relative;
+        display: block;
+    }
+        .history .video .problem, .history .video .problem span {
+            font-size: x-small;
+            color: var(--rgba-white);
+            cursor: default;
+        }
+            .history .video .problem span {
+                color: var(--rgb-secondary);
+            }
+
+        .history .video .editor {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            background-color: var(--rgb-dark);
+            padding: 2px;
+            margin: 4px 0;
+        }
+            .history .video .editor textarea {
+                width: 100%;
+                height: 86%;
+                background-color: transparent;
+                padding: 4px 8px;
+                outline: none;
+                cursor: default;
+            }
+            .history .video .editor p, .history .video textarea {
+                color: var(--rgba-white);
+                font-size: x-small;
+                font-family: "Courier New";
+            }
+        .history .video .test_cases, .history .video .output {
+            width: 49%;
+            display: inline-block;
+            vertical-align: top;
+            background-color: var(--rgb-dark);
+            cursor: default;
+            padding: 4px;
+            height: 143px;
+            overflow-y: auto;
+        }
+        .history .video .output {
+            margin-left: 4px;
+        }
+            .history .test_cases h3, .history .video .output h3 {
+                color: var(--rgba-white);
+                font-weight: 400;
+                font-size: x-small;
+            }
+            .history .video .test_cases .response p, .history .video .output .response p {
+                color: var(--rgba-white);
+                font-size: xx-small;
+            }
+            .history .video .test_cases .response .passed {
+                color: var(--rgba-secondary);
+            }
+            .history .video .test_cases .response .failed {
+                color
+                : var(--rgba-danger);
+            }
+        .history .video .settings {
+            position: relative;
+        }
+            .history .video .settings * {
+                display: inline-block;
+                vertical-align: top;
+                font-size: x-small;
+                font-weight: 300;
+                color: var(--rgba-white);
+            }
+            .history .video .settings .play, .history .video .settings .pause {
+                cursor: pointer;
+            }
+            .history .video .settings .play:hover, .history .video .settings .pause:hover {
+                background-color: var(--rgb-danger);
+                border-radius: 50%;
+            }
+            .history .video .settings .duration {
+                position: absolute;
+                right: 0;
+            }
+                .history .video .settings .playback_speed * {
+                    cursor: pointer;
+                }
+                .history .video .settings .playback_speed *:hover, .history .video .settings .playback_speed .selected {
+                    color: var(--rgb-danger);
+                }
+        .history .video .progress {
+            background-color: var(--rgba-danger);
+            width: 100%;
+            height: 8px;
+            position: absolute;
+            right: 0;
+            bottom: 1px;
+        }
+            .history .video .progress .indicator {
+                position: absolute;
+                top: 0;
+                cursor: pointer;
+            }
+
+    .history .records {
+        padding: 8px;
+        overflow-y: auto;
+    }
+        .history .records h3, .history .records .record {
+            margin-bottom: 8px;
+        }
+        .history .records .record {
+            padding-left: 8px;
+            position: relative;
+        }
+        .history .records .record:hover, .history .records .selected {
+            background-color: var(--rgba-grey);
+            cursor: pointer;
+        }
+            .history .records .record span {
+                position: absolute;
+                right: 0;
+            }
+.admin {
+
+}
+.admin .rankings, .admin .history, .admin .video {
+    display: inline-block;
+    vertical-align: top;
+}
+    .admin .rankings {
+        width: 350px;
+        height: 1080px;
+        background-color: var(--rgb-dark);
+        padding: 8px 0;
+        overflow-y: auto;
+        box-shadow: 4px 0 0 0 #49A14B;
+    }
+        .admin .rankings h3 {
+            color: var(--rgba-white);
+            padding: 0 8px;
+        }
+        .admin .rankings table {
+
+        }
+            .admin .rankings table tr {
+                cursor: pointer;
+            }
+            .admin .rankings table tr:hover td, .admin .rankings table tr.selected td {
+                background-color: var(--rgba-secondary);
+            }
+                .admin .rankings table tr th, .admin .rankings table tr td {
+                    font-size: x-small;
+                }
+        .admin .rankings .pagination {
+            margin: 0 auto;
+            padding: 0;
+        }
+    .admin .history {
+        width: calc(100% - 358px);
+        height: 1080px;
+        background-color: var(--rgba-white);
+    }
+        .admin .video {
+            height: 616px;
+            padding: 16px;
+        }
+            .admin .video .problem, .admin .video .problem span, .admin .video .editor p, .admin .video .editor textarea,
+            .admin .video .test_cases h3, .admin .video .output h3, .admin .video .test_cases .response p, .admin .video .output .response p {
+                font-size: small;
+            }
+            .admin .video .editor {
+                height: 300px;
+                margin: 16px 0;
+            }
+                .admin .video .editor textarea {
+                   height: 80%;
+                }
+            .admin .video .test_cases, .admin .video .output {
+                width: 49%;
+                height: 180px;
+            }
+                .admin .video .test_cases h3, .admin .video .output h3 {
+                    font-weight: 500;
+                }
+                .admin .video .test_cases .response, .admin .video .output .response {
+                    padding: 0 8px;
+                }
+                        .admin .video .test_cases .response p * {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+            .admin .video .output {
+                margin-left: 16px;
+            }
+            .admin .video .settings {
+            }
+                .admin .video .settings * {
+                    font-size: small;
+                }
+            .admin .video .progress {
+                margin-bottom: 0;
+                height: 16px;
+            }
+        .admin .history h3 {
+            padding: 0 8px;
+        }
+        .admin .history ul {
+            list-style: none;
+            font-size: small;
+        }
+            .admin .history ul li {
+                padding: 0 8px;
+                cursor: pointer;
+            }
+            .admin .history ul li:hover, .admin .history ul li.selected  {
+                background-color: var(--rgba-grey);
+            }
+                .admin .history ul li * {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 8px;
+                }
+
+
+
+
+
+

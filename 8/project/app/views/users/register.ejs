@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+    <body>
+        <%- include('../nav/register') %>
+        <div class = "error">
+<%  for(let index in message){
+%>
+            <p><%= message[index]%></p>
+<%  }
+%>
+        </div>
+        <div id = "container">
+            <form id = "registration" class ="w-5" action = "process" method = "post">
+                <h1>Register</h1>
+                <p><labeL class = "mt ml w-3">Email Adress:</labeL><input class = "ml w-5" type = "text" id = "email" name = "email"></p>
+                <p><labeL class = "ml w-3">First Name:</labeL><input class = "ml w-5" type = "text" id = "fName" name = "fName"></p>
+                <p><labeL class = "ml w-3">Last Name:</labeL><input class = "ml w-5" type = "text" id = "lName" name = "lName"></p>
+                <p><labeL class = "ml w-3">Password:</labeL><input class = "ml w-5" type = "password" id = "password" name = "password"></p>
+                <p><labeL class = "ml w-3">Confirm Password:</labeL><input class = "ml w-5" type = "password" id = "cPassword" name = "cPassword"></p>
+                <input class = "submit ml-7 w-2 mt" type = "submit" value = "Register">
+                <a href = "/login">Already have an account? Login</a>
+            </form>
+        </div>
+<%- include('../partials/footer') %>

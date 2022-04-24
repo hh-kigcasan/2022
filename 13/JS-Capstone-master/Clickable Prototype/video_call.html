@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" type = "text/css" href = "stylesheets/fonts.css">
+        <link rel = "stylesheet/less" type = "text/css" href = "stylesheets/style.less">
+        <link rel = "stylesheet/less" type = "text/css" href = "stylesheets/style2.less">
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/less.js/4.0.0/less.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "scripts/main.js"></script>
+        <script src = "scripts/vid_cam.js"></script>
+        <script src = "scripts/subtitle.js"></script>
+        <title>Video Call Page</title>
+    </head>
+    <body>
+        <main id = "user-video" class = "display-inline-block">
+            <video id = "gum" playsinline autoplay muted></video> 
+            <video id = "recorded" playsinline loop></video>
+            <section id = "video-buttons" class = "display-block">
+                <button id = "start" class = "display-inline-block"><img src = "img/vidcam.png"></button>
+                <button id = "record" disabled class = "display-inline-block" value = "Record"><img src = "img/record.png"></button>
+                <button id = "start-btn">Start</button>
+            </section>
+            <div id = "echo-cancel">
+                <p>Echo cancellation: <input type="checkbox"  checked id="echoCancellation" /></p>
+            </div>
+            <div>
+                <span id = "errorMsg"></span>
+            </div>
+            <textarea id = "subtitle"></textarea>
+        </main>
+
+        <aside id = "chatbox" class = "display-inline-block">
+            <section class = "display-block">
+                <textarea id = "user-chat" class = "display-inline-block"></textarea>
+                <button class = "display-inline-block">Send</button>
+            </section>
+        </aside>
+        <a href = "dashboard.html" class = "link-button display-block" id = "end-call">End Call</a>
+    </body>
+</html>

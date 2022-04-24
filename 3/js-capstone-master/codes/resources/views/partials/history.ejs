@@ -1,0 +1,42 @@
+<div class="video">
+    <p class="problem"><span>Challenge <%= history.id %>:</span> <%= history.problem %>
+    <form class="editor">
+        <p>function operation(array) {</p>
+        <textarea name="code" placeholder="Place your code here" disabled></textarea>
+        <p>}</p>
+    </form>
+    <div class="test_cases">
+        <h3>Testcases</h3>
+        <div class="response">
+        </div>
+    </div>
+    <div class="output">
+        <h3>Output</h3>
+        <div class="response">
+        </div>
+    </div>
+    <div class="settings">
+        <span class="iconify play" data-icon="gg:play-button-o" data-height="16" data-filepath="<%= history.record_path %>"></span>
+        <p class="playback_speed">
+            <span class="selected">1x</span>
+            <span>2px</span>
+            <span>4px</span>
+            <span>8px</span>
+            <span>16px</span>
+        </p>
+        <p class="duration">00:00:00:00</p>
+    </div>
+    <div class="progress">
+        <span class="iconify indicator" data-icon="bi:circle-fill" data-height="16"></span>
+    </div>
+</div>
+<h3>History</h3>
+<ul>
+<%
+    for (let i = 0; i < histories.length; i++) {
+%>
+        <li id="<%= histories[i].id %>" class="<%= i === selected_index ? 'selected' : ''%>"><span class="iconify" data-icon="gg:play-button-o" data-filepath="<%= histories[i].record_path %>"></span> Challenge <%= histories[i].id %>:<span> <%= histories[i].title %></span><span class="duration"><%= histories[i].duration %></span></li>
+<%
+    }
+%>
+</ul>

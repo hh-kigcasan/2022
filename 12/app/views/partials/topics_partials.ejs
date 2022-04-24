@@ -1,0 +1,8 @@
+<h2>Trending Topics in the World (last <%= time %> hour/s ago): </h2>
+<ul>
+<% for(const { topics } of data){ %>
+    <% for(const topic of topics){ %> 
+        <li><a href="<%= topic.url %>" target="_blank"><%= topic.name %></a></li>
+    <% } %> 
+<% } %> 
+</ul>

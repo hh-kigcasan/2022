@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <!-- <script src="//d3js.org/queue.v1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/versor.js"></script>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <h1>Twitter Globe</h1>
+    </header>
+    <main>
+        <form action="/getTopics" method="post" id="getTopics">
+            <label for="">See last tweets: </label>
+            <select name="time" id="time">
+                <%_ for(let i = 1; i <= 24; i++){ _%>
+                <option value="<%= i %>"><%= i %> hour<%= i === 1 ? "" : "s" %> ago</option>
+                <%_ } _%> 
+            </select>
+        </form>
+        <div id="container">
+            <section id="world">
+                <h2>Trending Topics in the World: </h2>
+                <ul>
+                    <%_ for(let i = 0; i < 50; i++){ _%>
+                    <li><a href="<%= data[i].url %>" target="_blank"><%= data[i].name %></a></li>
+                    <%_ } _%>
+                </ul>
+            </section>
+            <section>
+                <canvas id="globe"></canvas>
+                
+            </section>
+            <section id="country">
+                <p id="tips">Hover to see trending topics per country.</p>
+            </section>
+        </div>
+    </main>
+    <aside id="tooltip">
+        <h2>?</h2>
+        <p id="tooltiptext">This is a Twitter Globe. It will show the trending topics of country when you hover a country in the Globe. To see all the tweets, click a certain topic in the list.</p>
+    </aside>
+</body>
+</html>

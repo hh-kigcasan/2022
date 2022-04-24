@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "stylesheets/fonts.css">
+        <link rel = "stylesheet/less" type = "text/css" href = "stylesheets/style.less">
+        <link rel = "stylesheet/less" type = "text/css" href = "stylesheets/style2.less">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.0.0/less.min.js"></script>
+        <title>Register Page</title>
+    </head>
+    <body>
+        <form action = "login.html" method = "POST" id = "form-container" class = "display-block">
+            <h1>Register</h1>
+            <section>
+                <label>First Name: </label>
+                <input type = "text" name = "first_name">
+            </section>
+            <section>
+                <label>Last Name: </label>
+                <input type = "text" name = "last_name">
+            </section>
+            <section>
+                <label>Email: </label>
+                <input type = "text" name = "email">
+            </section>
+            <section>
+                <label>Password: </label>
+                <input type = "password" name = "password">
+            </section>
+            <section>
+                <label>Confirm Password: </label>
+                <input type = "password" name = "confirm_password">
+            </section>
+            <input type = "submit" value = "Register">
+            <a href = "login.html" class = "display-block">Already registered? Login</a>
+        </form>
+    </body>
+</html>

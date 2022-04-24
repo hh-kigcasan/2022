@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Report</title>
+        <link href="stylesheets/report-style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-cartesian.min.js"></script>
+        <script>
+            anychart.onDocumentReady(function () {
+                let responses = '<%- JSON.stringify(response_array) %>';
+                let dataset = JSON.parse(responses);
+                let chart = anychart.line();
+                let series = chart.line(dataset);
+                series.name('Response Time')
+                chart.xScale().mode('continuous');
+                chart.title("Line Chart: Response Time");
+                let xAxis = chart.xAxis();
+                xAxis.title("Request Number");
+                let yAxis = chart.yAxis();
+                yAxis.title("Response Time, ms");
+                // set the container id
+                chart.container("chart");
+                chart.draw();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Result for <%= url _%></h1>
+            <a href="/" id="retest">Retest</a>
+            <div class="response">
+                <h2>Response Times</h2>
+                <p>Average: <span><%= result.meanLatencyMs _%>ms</span></p>
+                <p>Min: <span><%= result.minLatencyMs _%>ms</span></p>
+                <p>Max: <span><%= result.maxLatencyMs _%>ms</span></p>
+            </div>
+            <div class="response">
+                <h3>Response Counts</h3>
+                <p>Success: <span><%= result.totalRequests _%></span></p>
+                <p>Errors: <span><%= result.totalErrors _%></span></p>
+            </div>
+            <div id="chart">
+            </div>
+            <div class="information">
+                <h4>Website Information</h4>
+                <p>Host: <span><%= web_info.host _%></span></p>
+                <p>Method: <span><%= web_info.method _%></span></p>
+                <p>Status Code: <span><%= web_info.statusCode _%></span></p>
+            </div>
+            <div class="headers">
+                <h4>Headers</h4>
+                <ul>         
+<%              for(let keys in web_info.headers){ %>  
+                    <li><%= keys + " : " + web_info.headers[keys] _%></li>             
+<%              } %> 
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

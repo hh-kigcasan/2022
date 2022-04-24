@@ -1,0 +1,18 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/error_msg.ejs") %>
+        <form action = "process_login" method = "POST" id = "form-container" class = "display-block">
+            <h1>Login</h1>
+            <section>
+                <label>Email: </label>
+                <input type = "text" name = "email">
+            </section>
+            <section>
+                <label>Password: </label>
+                <input type = "password" name = "password">
+            </section>
+            <input type = "hidden" name = "_csrf" value = "<%= token %>"/>
+            <input type = "submit" value = "Login">
+            <a href = "register" class = "display-block">Not yet registered? Register</a>
+            <a href = "#" class = "link-button display-block">Login with Google</a>
+        </form>
+<%- include("../partials/footer.ejs") %>

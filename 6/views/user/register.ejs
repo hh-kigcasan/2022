@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Register</title>
+    <script>
+        $(document).ready(() => {
+            // Hide First
+            $('#login_form, #avatar').hide();
+
+            // Animate one by one
+            $('#login_form').toggle("slide:right", () => {
+                $('#avatar').toggle("slide:right", () => {
+                    $('#avatar').css('transform', `rotate(-360deg)`);
+                    $('#avatar').css('transition', `1s linear`);
+                    $('#avatar').css('transform', `scaleX(-1)`);
+                });
+            });
+
+            $('.accept').click(() => {
+                $('.container, #shadow').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<% if(Object.keys(errors).length !== 0) { %>
+    <div id="shadow"></div>
+    <div class="container">
+        <div class="cookiesContent" id="cookiesPopup">
+        <img src="https://cdn0.iconfinder.com/data/icons/seo-outline-black-part-3/128/search_Magnifying_Glass_Zoom_Spy_Hacker_Malware_criminal_Security-512.png" alt="cookies-img" />
+<% for(const error in errors) { %>
+        <p>*<%= errors[error] %></p>
+<% } %>
+        <button class="accept">Okay, try again!</button>
+        </div>
+    </div>
+<% } %>
+    <form action="/validate" method="post" id="login_form">
+        <img src="images/avatar.png" alt="Avatar" id="avatar" />
+        <h2>Register</h2>
+        <input type="hidden" name="action" value="register" />
+        <input type="text" name="first_name" placeholder="First Name" />
+        <input type="text" name="last_name" placeholder="Last Name" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="password" name="confirm_password" placeholder="Confirm Password" />
+        <input type="submit" value="Register" />
+    </form>
+    <a href="/login">I already have an account</a>
+</body>
+</html>

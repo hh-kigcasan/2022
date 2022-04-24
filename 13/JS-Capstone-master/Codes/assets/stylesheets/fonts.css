@@ -1,0 +1,135 @@
+/* FOR SMALL WIDTH */
+@media only screen and (max-width: 480px) {
+    a, p, h4, label {
+        font-size: 3.0vw;
+    }
+    h1 {
+        font-size: 6.66vw
+    }
+    h2 {
+        font-size: 5vw
+    }
+    h3 {
+        font-size: 3.9vw
+    }
+    h5, button {
+        font-size: 2.76vw
+    }
+    h6 {
+        font-size: 2.23vw
+    }
+}
+
+/* FOR MEDIUM WIDTH */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* CODES HERE */
+    a, p, h4, label {
+        font-size: 2.08vw;
+    }
+    h1 {
+        font-size: 4.16vw
+    }
+    h2 {
+        font-size: 3.125vw
+    }
+    h3 {
+        font-size: 2.437vw
+    }
+    h5, button {
+        font-size: 1.729vw
+    }
+    h6 {
+        font-size: 1.39vw
+    }
+}
+
+/* FOR LARGE WIDTH */
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+    /* CODES HERE */
+    a, p, h4, label {
+        font-size: 1.56vw;
+    }
+    h1 {
+        font-size: 3.128vw
+    }
+    h2 {
+        font-size: 2.346vw
+    }
+    h3 {
+        font-size: 1.829vw
+    }
+    h5, button {
+        font-size: 1.29vw
+    }
+    h6 {
+        font-size: 1.04vw
+    }
+}
+
+/* FOR X LARGE WIDTH */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    /* CODES HERE */
+    a, p, h4, label {
+        font-size: 1.11vw;
+    }
+    h1 {
+        font-size: 2.22vw
+    }
+    h2 {
+        font-size: 1.66vw
+    }
+    h3 {
+        font-size: 1.30vw
+    }
+    h5, button {
+        font-size: 0.92vw
+    }
+    h6 {
+        font-size: 0.74vw
+    }
+}
+
+/* FOR XX LARGE WIDTH */
+@media only screen and (min-width: 1440px) and (max-width: 1679px) {
+    /* CODES HERE */
+    a, p, h4, label {
+        font-size: 1.04vw;
+    }
+    h1 {
+        font-size: 2.08vw
+    }
+    h2 {
+        font-size: 1.56vw
+    }
+    h3 {
+        font-size: 1.21vw
+    }
+    h5, button {
+        font-size: 0.86vw
+    }
+    h6 {
+        font-size: 0.697vw
+    }
+}
+
+/* FOR XXX LARGE WIDTH */
+@media only screen and (min-width: 1680px){
+    a, p, h4, label {
+        font-size: 0.83vw;
+    }
+    h1 {
+        font-size: 1.66vw
+    }
+    h2 {
+        font-size: 1.25vw
+    }
+    h3 {
+        font-size: 0.975vw
+    }
+    h5 {
+        font-size: 0.69vw
+    }
+    h6 {
+        font-size: 0.55vw
+    }
+}

@@ -1,0 +1,9 @@
+# PostgreSQL database
+app: PostgreSQL
+version: v14
+database: 
+  DB_name: "twitter"
+  DB_host: "127.0.0.1"
+  DB_port: 5432
+  DB_user: "postgres"
+  DB_password: "password"

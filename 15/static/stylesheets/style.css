@@ -1,0 +1,370 @@
+@font-face {
+  font-family: "DistrictThin";
+  src: url(/fonts/districthin.ttf);
+}
+
+@font-face {
+  font-family: "Stempel";
+  src: url(/fonts/StempelGaramondW04Roman.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "DistrictThin";
+}
+
+html, 
+body {
+  background: url(/images/bg-splash.jpg) bottom left repeat-x;
+    height: 100vh;
+}
+
+
+
+nav {
+  padding: 0.5em;
+  background: gray;
+}
+
+h1 {
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+  display: inline-block;
+}
+
+ul > .navLink {
+  display: inline-block;
+  padding: 0.5em;
+  text-decoration: none;
+  border-radius: 0.5em;
+}
+
+main {
+  text-align: center;
+  padding: 1em;
+}
+
+.navLink > a {
+  text-decoration: none;
+  color: white;
+}
+
+.navLink > a:hover {
+  border-bottom: 2px solid black;
+}
+
+.navLink > a:active {
+  border-bottom: 2px solid black;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+.logo {
+  content: url(/images/logo.png);
+  width: 520px;
+  height: 200px;
+}
+
+.maintitle {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.slogan {
+  margin: 20px 0px 20px 0px;
+  color: #333333;
+  font-size: 38px;
+  padding-left: 30px;
+}
+
+.subslogan {
+  color: #333333;
+  font-size: 28px;
+  padding-left: 30px;
+  margin: 0px 0px 5px 0px;
+}
+
+.library {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Credits: @Miss Moss  */
+
+.shelf {
+  display: block;
+  z-index: 9;
+  content: url(/images/shelf.png);
+  position: relative;
+  width: 941px;
+  height: 175px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookonshelf {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -80px; /* This is what actually puts the stuff ON the shelf instead of hovering above it */
+  width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.miniview {
+  font-family: "Stempel";
+  text-align: center;
+  resize: none;
+  /* text-align: justify;
+  text-justify: inter-word; */
+  width: 100%;
+  height: 100%;
+  border: none;
+  word-wrap: break-word;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#usersList {
+  color: white;
+  position: absolute;
+  top: 1.7em;
+  left: 5em;
+}
+
+#listTitle{
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.user {
+  color: white;
+  display: block;
+}
+
+.book {
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  font-size: 1em;
+  font-family: "Stempel";
+  background-color: white;
+  /* background: url(/images/sample.jpg) no-repeat center; */
+  background-size: 100% 100%;
+  transition: transform 0.1s;
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 60%);
+  border-radius: 5px;
+}
+
+.hover:hover {
+  transform: scale3d(1.1, 1.1, 1.1) translate3d(0, -5px, 0);
+  cursor: none;
+}
+
+/* Modal */
+
+.bookviewer {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Change this later  */
+  backdrop-filter: blur(5px);
+}
+
+.bookcontent {
+  margin: 2% auto;
+  width: 960px;
+  height: 582px;
+}
+
+.closeBtn {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0px 20px 20px 20px;
+  animation-name: bookclose;
+  animation-duration: 1s;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: grey;
+  cursor: pointer;
+}
+
+.animated {
+  -webkit-transition: margin-left 0.2s ease-in-out;
+  -moz-transition: margin-left 0.2s ease-in-out;
+  -o-transition: margin-left 0.2s ease-in-out;
+  -ms-transition: margin-left 0.2s ease-in-out;
+  transition: margin-left 0.2s ease-in-out;
+}
+
+.flipbook {
+  animation-name: bookopen;
+  animation-duration: 1s;
+}
+
+.flipbook .hard {
+  background-color: green;
+  font-size: 1.2em;
+}
+
+.flipbook .page {
+  background-color: white;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 60%);
+}
+
+.flipbook .even {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0.95, #fff),
+    color-stop(1, #dadada)
+  );
+  background-image: -webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -moz-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -ms-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -o-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: linear-gradient(left, #fff 95%, #dadada 100%);
+}
+
+.flipbook .odd {
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    color-stop(0.95, #fff),
+    color-stop(1, #cacaca)
+  );
+  background-image: -webkit-linear-gradient(right, #fff 95%, #cacaca 100%);
+  background-image: -moz-linear-gradient(right, #fff 95%, #cacaca 100%);
+  background-image: -ms-linear-gradient(right, #fff 95%, #cacaca 100%);
+  background-image: -o-linear-gradient(right, #fff 95%, #cacaca 100%);
+  background-image: linear-gradient(right, #fff 95%, #cacaca 100%);
+}
+
+.story-cover-title {
+  font-family: "Stempel";
+  font-size: 2em;
+  padding: 1em;
+  resize: none;
+  /* text-align: justify;
+  text-justify: inter-word; */
+  width: 87%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  text-align: center;
+}
+
+.storycontent {
+  font-family: "Stempel";
+  font-size: 1.2em;
+  padding: 1em;
+  resize: none;
+  /* text-align: justify;
+  text-justify: inter-word; */
+  width: 91.5%;
+  height: 93%;
+  max-height: 93%;
+  min-width: 93%;
+  background: transparent;
+  border: none;
+  line-height: 1.5em;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.storycontent:focus,
+.miniview:focus {
+  outline: none;
+}
+
+.bookfooter {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.bookfooter > div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 10px;
+}
+
+.bookfooter > div > button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.bookfooter > div p {
+  color: white;
+  margin: 10px 0px;
+}
+
+
+.fa-microphone,
+.fa-plus,
+.fa-save {
+  color: white;
+}
+
+.fa-plus:hover {
+  color: lightgreen;
+  cursor: pointer;
+}
+
+.fa-microphone:hover {
+  color: lightcoral;
+  cursor: pointer;
+}
+
+.fa-save:hover {
+  color: lightblue;
+  cursor: pointer;
+}
+
+.recordActive {
+  color: lightcoral;
+}
+
+@keyframes bookopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bookclose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

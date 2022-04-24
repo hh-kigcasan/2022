@@ -1,0 +1,5 @@
+                <div class="existing_records">
+<%_ for (let i = 0; i < users.length; i++) { _%>
+                    <button class="user_records" id="user_<%= users[i].user_id %>">User ID#<%= users[i].user_id %> <span><%= users[i].time %></span><span><%= users[i].created_at %></span></button>
+<%_ } _%>
+                </div>

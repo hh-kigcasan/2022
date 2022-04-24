@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Insert Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f179fb6516.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="turn.js"></script>
+    <script src="modal.js"></script>
+    <script src="speechAPI.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".navLink > a").click(function (e) {
+          $(this)
+            .addClass("active")
+            .parent()
+            .siblings()
+            .find("a")
+            .removeClass("active");
+          return false;
+        });
+      });
+    </script>
+
+    <title>VirBook</title>
+  </head>
+  <body>
+    <nav>
+      <h1>VirBook</h1>
+      <ul>
+        <li class="navLink"><a class="selected" href="">Virtual Book</a></li>
+        <li class="navLink"><a href="">Shared Accounts</a></li>
+        <li class="navLink"><a href="">Account Settings</a></li>
+      </ul>
+    </nav>
+    <main style="margin: 10px">
+      <div class="maintitle">
+        <img class="logo" />
+        <p class="slogan">Make a Story with Others</p>
+        <p class="subslogan">A Collaborative Story Maker</p>
+        <p class="subslogan">Simple User Interface</p>
+        <p class="subslogan">Speech to Text API</p>
+      </div>
+      <div class="library">
+        <div class="bookonshelf">
+          <div id="sample-book" class="example hover">Hehehe</div>
+          <div class="example hover">Hehehe</div>
+          <div class="example hover">Hehehe</div>
+          <div class="example hover">Hehehe</div>
+          <div class="example hover">Hehehe</div>
+        </div>
+        <img class="shelf" />
+        <div class="bookonshelf">
+          <div class="example hover"></div>
+        </div>
+        <img class="shelf" />
+      </div>
+    </main>
+
+    <!-- Modal Book Viewer Start -->
+    <div id="simple-modal" class="modal">
+      <span id="close-modal" class="closeBtn">&times;</span>
+      <div class="modal-content">
+        <div id="flipbook">
+          <div class="hard">Book</div>
+          <div class="hard">Book</div>
+          <div class="page">
+            <p id="textbox" class="storycontent">Once a upon a time</p>
+          </div>
+          <div class="page"><p " class="storycontent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum sit recusandae officia quisquam quaerat ullam, ut obcaecati libero iure dicta veniam quae quis eveniet laboriosam! Saepe deleniti modi corporis iure?</p></div>
+          <div> <p class="storycontent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum sit recusandae officia quisquam quaerat ullam, ut obcaecati libero iure dicta veniam quae quis eveniet laboriosam! Saepe deleniti modi corporis iure?</p></div>
+          <div> <p class="storycontent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum sit recusandae officia quisquam quaerat ullam, ut obcaecati libero iure dicta veniam quae quis eveniet laboriosam! Saepe deleniti modi corporis iure?</p>
+            <p class="storycontent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum sit recusandae officia quisquam quaerat ullam, ut obcaecati libero iure dicta veniam quae quis eveniet laboriosam! Saepe deleniti modi corporis iure?</p></div>
+          <div class="hard">Back 2</div>
+          <div class="hard">Back 1</div>
+        </div>
+        <!-- Record Start -->
+        <div class="modal-footer">
+          <button id="record-btn">
+            <i class="fas fa-microphone fa-2x"></i>
+          </button>
+          <p id="instructions"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Book Viewer End -->
+  </body>
+</html>

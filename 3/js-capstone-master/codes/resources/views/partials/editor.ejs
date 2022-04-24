@@ -1,0 +1,29 @@
+<div class="video">
+    <p class="problem"><span>Challenge <%= id %>:</span> <%= problem %>
+    <form class="editor">
+        <input type="submit" value="Run and Submit">
+        <p>function operation(array) {</p>
+        <textarea name="code" placeholder="Place your code here"></textarea>
+        <p>}</p>
+    </form>
+    <div class="test_cases">
+        <h3>Testcases</h3>
+        <div class="response">
+<%
+    for (let i = 0; i < test_cases.length; i++) {
+%>
+        <p class="muted"><span class="iconify" data-icon="iconoir:security-pass"></span>operation([<%= test_cases[i].value %>]) === <%= test_cases[i].output %></p>
+<%
+    }
+%>
+        </div>
+    </div>
+    <div class="output">
+        <h3>Output</h3>
+        <div class="response">
+        </div>
+    </div>
+    <div class="settings">
+        <p class="duration">00:00:00</p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+       
+<%- include('../partials/header') %>
+<body>
+    <%- include('../nav/users') %>
+    <div class= "error">
+<%  for(let index in message){
+%>
+        <p><%= message[index]%></p>
+<%  }
+%>
+    </div>
+    <h1>Edit Profile</h1>
+    <div class = "w-4 inline ml" id = "wrapper"> 
+        <form  action = "/update_user_info" class = "h-300" method = "post"> 
+            <h2 class ="pb">Edit Information</h2>
+            <p><label class = "w-4">Email Address:</label><input class = "w-4" type = "text" id = "email" name = "email" value = "<%= details.email_address %>"></p>
+            <p><label class = "w-4">First Name:</label><input class = "w-4" type = "text" id = "fName" name = "fName" value = "<%= details.first_name %>"></p>
+            <p><label class = "w-4" >Last Name:</label><input class = "w-4" type = "text" id = "lName" name = "lName" value = "<%= details.last_name %>"></p>
+            <input class = "submit ml-6 mt w-2" type = "submit" value = "Save">
+        </form>
+    </div>
+    <div class = "w-4 ml-1 inline mh" id = "wrapper"> 
+        <form action = "/update_user_password" class = "h-300" method = "post"> 
+            <h2 class ="pb">Change Password</h2>
+            <p><label class = "w-4">Old Password:</label><input class = "w-4" type = "password" id = "oPassword" name = "oPassword"></p>
+            <p><label class = "w-4">Password:</label><input class = "w-4" type = "password" id = "password" name = "password"></p>
+            <p></p><label class = "w-4">Confirm Password:</label><input class = "w-4" type = "password" id = "cPassword" name = "cPassword"> </p>
+            <input class = "submit ml-6 mt w-2" type = "submit" value = "Save">
+        </form>
+    </div>
+<%- include('../partials/footer') %>

@@ -1,0 +1,81 @@
+/* primary: "#35858B",
+secondary: "#4FBDBA",
+dark: "#072227",
+light: "azure" */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #072227;
+}
+
+.nav-link {
+    color: azure;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+#navlogo {
+    background-size: contain;
+    height: 60px;
+    padding: 5px;
+}
+
+#map {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.marker {
+    display: absolute;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.9;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+.marker h6 {
+    position: relative;
+    top: 50px;
+    background-color: rgba(241, 237, 228, 0.714);
+    border-radius: 50%;
+}
+
+.modal-content {
+    background-color: rgba(240, 255, 255, 0.855) !important;
+}
+
+#staticBackdropLabel {
+    color: rgb(0, 188, 0);
+    font-size: 7vh;
+}
+
+th img {
+    background-size: contain;
+    height: 55px;
+    padding: 5px;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.online {
+    color: rgba(1, 237, 1, 0.879);
+}
+
+.highlight {
+    background: rgba(0, 128, 0, 0.26);
+    font-weight: bold;
+}
+
+a {
+    cursor: pointer;
+}

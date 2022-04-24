@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/settings.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Settings</title>
+    <script>
+        $(document).ready(() => {
+            $('form#enter_code').submit((e) => {
+                e.preventDefault();
+            });
+            // // Hide First
+            $('#shadow, .container, section, #enter_code, #avatar, #logout > input, #back > input').hide();
+            
+            // Animate one by one
+            $('section').toggle("slide:right", () => {
+                $('#avatar').toggle("slide:right", () => {
+                    $('#avatar').css('transform', `scaleX(-1)`);
+                    $('#avatar').css('transition', `1s linear`);
+                    $('#back > input').toggle("slide:right", () => {
+                        $('#logout > input').toggle("slide:right");
+                        $('#enter_code').toggle("slide:right");
+                    });
+                });
+            });
+
+            $('#enter_code').on('change', 'input:text', () => {
+                const subject_code = $('form').find('input:text').val();
+                const data = subject_code.trim().toUpperCase();
+                $.post('/share_subject', { subject_code: data }, (error) => {
+                    const subj = JSON.parse(error);
+                    $('p').html(subj['Subject Name']);
+                    $('#shadow, .container').toggle();
+                });
+                $('form').find('input:text').val(' ');
+            });
+
+            $('.accept').click(() => {
+                $('#shadow, .container').toggle();
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="shadow"></div>
+    <div class="container">
+        <div class="cookiesContent" id="cookiesPopup">
+            <img src="https://cdn0.iconfinder.com/data/icons/seo-outline-black-part-3/128/search_Magnifying_Glass_Zoom_Spy_Hacker_Malware_criminal_Security-512.png" alt="cookies-img" id="logo"/>
+            <p></p>
+            <button class="accept">Okay!</button>
+        </div>
+    </div>
+    <section>
+        <img src="images/avatar.png" alt="Avatar" id="avatar" />
+        <h3><%= user.first_name %></h3>
+        <h3><%= user.last_name %></h3>
+        <h3><%= user.email %></h3>
+    </section>
+    <nav>
+        <form action="/main" method="get" id="back">
+            <input type="submit" value="Go Back!" />
+        </form>
+        <form action="/logout" method="post" id="logout">
+            <input type="submit" value="Log Out!" />
+        </form>
+    </nav>
+    <form action="#" method="post" id="enter_code">
+        <input type="text" name="code" placeholder="Enter Subject Code">
+    </form>
+</body>
+</html>

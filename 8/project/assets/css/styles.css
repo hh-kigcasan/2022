@@ -1,0 +1,336 @@
+.w-1{
+    width: 10%;
+}
+.w-1h{
+    width: 15%;
+}
+.w-2{
+    width: 20%;
+}
+.w-3{
+    width: 30%;
+}
+.w-4{
+    width: 40%;
+}
+.w-5{
+    width: 50%;
+}
+.w-6{
+    width: 60%;
+}
+.w-7{
+    width: 70%;
+}
+.w-8{
+    width: 80%;
+}
+.w-9{
+    width: 90%;
+}
+.w-10{
+    width: 100%;
+}
+.h-100{
+    height: 100px;
+}
+.h-200{
+    height: 200px;
+}
+.h-400{
+    height: 400px;
+}
+.mh{
+    min-height: 500px;
+}
+.ml{
+    margin-left: 30px;
+}
+.ml-1{
+    margin-left: 10%;
+}
+.ml-2{
+    margin-left: 20%;
+}
+.ml-3{
+    margin-left: 30%;
+}
+.ml-4{
+    margin-left: 40%;
+}
+.ml-5{
+    margin-left: 50%;
+}
+.ml-6{
+    margin-left: 60%;
+}
+.ml-7{
+    margin-left: 70%;
+}
+.ml-8{
+    margin-left: 80%;
+}
+.mr{
+    margin-right: 30px;
+}
+.mr-1{
+    margin-right: 10%;
+}
+.mr-2{
+    margin-right: 20%;
+}
+.mr-3{
+    margin-right: 30%;
+}
+.mr-4{
+    margin-right: 40%;
+}
+.mr-5{
+    margin-right: 50%;
+}
+.mt{
+    margin-top: 20px;
+}
+.pb{
+    padding-bottom: 20px;
+}
+header ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+.border{
+    border: 1px solid black;
+}
+.inline{
+    display: inline-block;
+    vertical-align: top;
+}
+.price{
+    text-align: right;
+}
+.center{
+    text-align: center;
+}
+.adjust{
+    margin: 10px auto;
+}
+.block{
+    display: block;
+}
+.download{
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+}
+.show{
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+}
+.error{
+    /* background-color: darkred; */
+    background-color: rgba(200, 220, 141, .3);
+}
+a{
+    color: darkturquoise;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/bg3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    vertical-align: middle;
+}
+nav{
+    font-size: 25px;
+    background-color: rgba(200, 220, 141, .3);
+    padding: 5px 20px;
+    position: relative;
+    padding: 20px 0px;;
+}
+    nav ul, li{
+        list-style-type: none;
+        display: inline-block;
+        padding: 0px 30px;
+    }
+    nav p{
+        font-size: 25px;
+    }
+section{
+    overflow-y: scroll;
+    height: 400px;
+    position: relative;
+}
+h1{
+    font-size: 25px;
+    background-color: rgba(241, 241, 241, .3);
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 5px 20px;
+    position: relative;
+}
+    h1 button, .box button{
+        background-color: lightcoral;
+        width: 80px;
+        height: 40px;
+        color: aliceblue;
+        border-radius: 10px;
+    }
+a, h1{
+    color: black;
+}
+.overflow{
+    overflow-y: scroll;
+}
+.logout{
+    position :absolute;
+    right: 20px;
+}
+.box{
+    background-color: rgba(241, 241, 241, .1);
+    position: relative;
+}
+form, table, #container, #item, #chartContainer{
+    margin: auto auto;
+    background-color: rgba(241, 241, 241, .1);
+}
+form .message
+{
+    width: 800px;
+    margin-left: 30px;
+    display: block;
+}
+    form button{
+        background-color: lightcoral;
+        width: 80px;
+        height: 30px;
+        color: aliceblue;
+        border-radius: 10px;
+    }
+    form a{
+        padding: 20px 10px;
+        display: block;
+        color: black;
+    }
+    form img{
+        width: 200px;
+        height: 250px;
+    }
+    form .submit{
+        background-color: lightcoral;
+        color: aliceblue;
+        border-radius: 10px;
+    }
+    form .post{
+        background-color: lightcoral;
+        margin-left : 65%;
+        width: 150px;
+        color: aliceblue;
+        border-radius: 10px;   
+    }
+input, select{
+    width: 25%;
+    border: .2px solid black;
+    background-color: transparent;
+    color: black;
+}
+label{
+    display: inline-block;
+}
+table{
+    border-spacing: 0;
+    text-align: left;
+}
+td, th{
+    padding: 10px;
+}
+th{
+    background-color: rgba(0, 0, 0, .7);
+}
+label, select, input{
+    font-size: 20px;
+}
+#voice{
+    background-image: url("../images/sys_voice.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    height: 50px;
+    width: 50px;
+    border: transparent;
+    background-color: transparent;
+}
+.sm-chart{
+    width: 60px;
+    height: 80px;
+    background-color: lightgreen;
+    border-radius: 25px;
+    position: absolute;
+    left: 100px;
+    display: inline-block;
+    margin-left: 2px;
+    border: 3px solid black;
+}
+    .sm-chart p{
+        font-size: 8px;
+    }
+    .sm-chart img{
+        width: 15px;
+        height: 15px;
+        font-size: 8px;
+        margin-left: 30%;;
+    }
+.chart{
+    width: 155px;
+    height: 175px;
+    background-color: lightgreen;
+    border-radius: 25px;
+    position: absolute;
+    left: 100px;
+    display: inline-block;
+    margin-left: 2px;
+    border: 3px solid black;
+}
+    .chart label{
+        padding: 3px;
+        font-weight: bold;
+    }
+    .chart label, .chart input, .chart button {
+        font-size: 14px;
+    }
+    .chart img{
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin-left: 40%;
+    }
+    .chart p{
+        padding: 0px;
+        margin: 0px
+    }
+    .chart label{
+        display: block;
+        width: 25%;
+    }
+    .chart input{
+        width:98%;
+    }
+    .chart button{  
+        position: absolute;
+        bottom: 10px;
+        background-color: lightcoral;
+        color: black;
+        height: 20px;
+        width: 70px;
+    }
+    .chart .add{
+        left: 5px;
+    }
+    .chart .remove{
+        right: 5px;
+    }

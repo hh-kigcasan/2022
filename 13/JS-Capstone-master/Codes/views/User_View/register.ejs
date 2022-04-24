@@ -1,0 +1,30 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/error_msg.ejs") %>
+        <form action = "process_register" method = "POST" id = "form-container" class = "display-block">
+            <h1>Register</h1>
+            <section>
+                <label>First Name: </label>
+                <input type = "text" name = "first_name">
+            </section>
+            <section>
+                <label>Last Name: </label>
+                <input type = "text" name = "last_name">
+            </section>
+            <section>
+                <label>Email: </label>
+                <input type = "text" name = "email">
+            </section>
+            <section>
+                <label>Password: </label>
+                <input type = "password" name = "password">
+            </section>
+            <section>
+                <label>Confirm Password: </label>
+                <input type = "password" name = "confirm_password">
+            </section>
+            <input type = "hidden" name = "_csrf" value = "<%= token %>"/>
+            <input type = "submit" value = "Register">
+            <a href = "/" class = "display-block">Already registered? Login</a>
+            <a href = "#" class = "link-button display-block">Register with Google</a>
+        </form>
+<%- include("../partials/footer.ejs") %>

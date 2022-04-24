@@ -1,0 +1,6 @@
+<h2>Trending in <span id="currentCountry"><%= country %> </span>: </h2>
+<ul>
+    <%_ for(let i = 0; i < 50; i++){ _%>
+    <li><a href="<%= data[i].url %>" target="_blank"><%= data[i].name %></a></li>
+    <%_ } _%>
+</ul>

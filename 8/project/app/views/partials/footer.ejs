@@ -1,0 +1,39 @@
+    </body>
+    <footer>
+        <button id = "voice"></button>
+        <div>
+            <%  if(profiler == 1){
+                    result = profiler_details();
+            %>
+                <h1>PROFILER TABLE</h1>
+                <table border = "1">
+                    <thead>
+                        <tr>
+                            <th>TITLE</th>
+                            <th>VALUES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>POST</td>
+                            <td><%= result.post %></td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td><%= result.get %></td>
+                        </tr>
+                        <tr>
+                            <td>SESSION</td>
+                            <td><%= result.session %></td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td><%= result.sql %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <%  }
+            %>        
+        </div>
+    </footer>
+</html>

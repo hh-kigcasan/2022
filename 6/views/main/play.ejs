@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/play.css">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/text_to_speech.js"></script>
+    <title>Play</title>
+    <script>
+        $(document).ready(() => {
+            $('form').submit((e) => {
+                e.preventDefault();
+            });
+
+            // // Hide First
+            $('#parameters, nav, #quiz_frame, #plus_icon, #play_icon, ul, section, #quiz_frame, #quiz_log, h3, #answer').hide();
+            
+            // Animate one by one
+            $('#parameters').toggle("slide:right", () => {
+                $('nav').toggle("slide:right", () => {
+                    $('#plus_icon').toggle("slide:right", () => {
+                        $('#play_icon').toggle('slide:right', () => {
+                            $('#play_icon').css('transform', `scaleX(-1)`);
+                            $('#play_icon').css('filter', `invert(1)`);
+                            $('#plus_icon').css('transform', `rotate(360deg)`);
+                            $('#play_icon, #plus_icon').css('transition', `1s linear`);
+                        });
+                    });
+                });
+                $('ul').toggle("slide:right", () => {
+                    $('section').toggle("slide:right");
+                    $('#quiz_frame').toggle("slide:right", () => {
+                        $('#quiz_log').toggle("slide:right", () => {
+                            $('#answer').toggle("slide:right");
+                            $('h3').toggle(1000);
+                        });
+                    });
+                });
+            });
+            
+            $('#plus_icon')
+            .mouseenter(() => {
+                $('#plus_icon').css('transform', `rotate(720deg)`);
+                $('#plus_icon').css('transition', `.8s linear`);
+            })
+            .mouseleave(() => {
+                $('#plus_icon').css('transform', `rotate(0deg)`);
+                $('#plus_icon').css('transition', `1.8s linear`);
+            });
+        });
+    // </script>
+</head>
+<body>
+    <form action="/parameters" method="post" id="parameters">
+        <ul></ul>
+    </form>
+    <nav>
+        <a href="/main"><img src="images/play_icon.png" alt="Play Icon" id="play_icon"></a>
+        <a href="/add_question"><img src="images/plus_icon.png" alt="Plus Icon" id="plus_icon"></a>
+    </nav>
+    <div id="quiz_frame">
+        <h3>○ mic</h3>
+        <div id="quiz_log"></div>
+        <form action="" method="post" id="answer">
+            <input type="text" name="answer" placeholder="Enter your answer"/>
+        </form>
+    </div>
+    <input type="hidden" id="user_id" value="<%= user.id %>" />
+    <input type="hidden" id="user_name" value="<%= user.first_name %>">
+</body>
+</html>

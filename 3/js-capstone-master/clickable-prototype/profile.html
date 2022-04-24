@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <p>Logged in as: <span class="username">Chasingbugs</span><span>#0001</span></p>
+        <p>No. of Challenges taken: <span>5/5</span></p>
+        <p>Total Duration: <span>1hours 30minutes</span></p>
+        <div>
+            <a href="rankings.html">Rankings</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html" class="logout">Log out</a>
+        </div>
+    </nav>
+    <div class="available_challenges">
+        <h3>Available Challenges:</h3>
+        <p>Challenge 5 <a href="profile.html">Take</a></p>
+        <p class="selected">Challenge 4 <a href="profile.html">Take</a></p>
+        <p>Challenge 3 <a href="profile.html">Take</a></p>
+        <p>Challenge 2 <a href="profile.html">Take</a></p>
+        <p>Challenge 1 <a href="profile.html">Retake</a></p>
+    </div>
+    <div class="challenge">
+        <p class="problem"><span>Challenge 4:</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        <form class="editor">
+            <input type="submit" value="Submit">
+            <p>function foo(data) {</p>
+            <textarea name="code" placeholder="Place your code here"></textarea>
+            <p>}</p>
+        </form>
+        <div class="test_cases">
+            <h3>Testcases</h3>
+            <div class="response">
+                <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                <p class="failed"><span class="iconify" data-icon="system-uicons:cross-circle"></span> [1, 2, 3, 4, 5]</p>
+                <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+            </div>
+        </div>
+        <div class="output">
+            <h3>Output</h3>
+            <div class="response">
+                <p>[1, 2, 3, 4, 5]</p>
+                <p>[1, 2, 3, 4, 5]</p>
+                <p>[1, 2, 3, 4, 5]</p>
+                <p>[1, 2, 3, 4, 5]</p>
+            </div>
+        </div>
+    </div>
+    <div class="history">
+        <div class="video">
+            <p class="problem"><span>Challenge 2:</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            <form class="editor">
+                <p>function foo(data) {</p>
+                <textarea name="code" placeholder="Place your code here" disabled></textarea>
+                <p>}</p>
+            </form>
+            <div class="test_cases">
+                <h3>Testcases</h3>
+                <div class="response">
+                    <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                    <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                    <p class="failed"><span class="iconify" data-icon="system-uicons:cross-circle"></span> [1, 2, 3, 4, 5]</p>
+                    <p class="passed"><span class="iconify" data-icon="iconoir:security-pass"></span> [1, 2, 3, 4, 5]</p>
+                </div>
+            </div>
+            <div class="output">
+                <h3>Output</h3>
+                <div class="response">
+                    <p>[1, 2, 3, 4, 5]</p>
+                    <p>[1, 2, 3, 4, 5]</p>
+                    <p>[1, 2, 3, 4, 5]</p>
+                    <p>[1, 2, 3, 4, 5]</p>
+                </div>
+            </div>
+            <div class="settings">
+                <span class="iconify play" data-icon="gg:play-button-o" data-height="14"></span>
+                <p class="playback_speed">
+                    <span class="selected">1x</span>
+                    <span>2x</span>
+                    <span>4px</span>
+                </p>
+                <p class="duration">00:00:00</p>
+            </div>
+            <div class="progress">
+                <span class="iconify indicator" data-icon="bxs:square" data-height="8"></span>
+            </div>
+        </div>
+        <div class="records">
+            <h3>History</h3>
+            <p class="record"><span class="iconify" data-icon="gg:play-button-o"></span> Challenge 1 <span class="duration">00:00:00</span></p>
+            <p class="record selected"><span class="iconify" data-icon="gg:play-stop-o"></span> Challenge 2 <span class="duration">00:00:00</span></p>
+            <p class="record"><span class="iconify" data-icon="gg:play-button-o"></span> Challenge 3 <span class="duration">00:00:00</span></p>
+            <p class="record"><span class="iconify" data-icon="gg:play-button-o"></span> Challenge 4 <span class="duration">00:00:00</span></p>
+            <p class="record"><span class="iconify" data-icon="gg:play-button-o"></span> Challenge 5 <span class="duration">00:00:00</span></p>
+        </div>
+    </div>
+</body>
+</html>

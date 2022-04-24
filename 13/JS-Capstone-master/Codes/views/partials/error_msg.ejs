@@ -1,0 +1,23 @@
+<%
+    if(msg.message.length !== 0) {
+        if(msg.type == "error") { %>
+        <article class = "errors">
+<% 
+    for(let i = 0; i < msg.message.length; i++) {
+%>
+            <p><%= msg.message[i] %></p>
+<% } %>
+<%
+        }
+        else if(msg.type == "success") { %>
+        <article class = "success">
+            <p><%= msg.message[0] %></p>
+<%
+        }
+        else { %>
+        <article class = "hide">
+<%
+        } 
+    }
+%> 
+</article>

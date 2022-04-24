@@ -1,0 +1,21 @@
+#DOCU :  Database set up configuration
+#Created by : rcesperanzate
+#Date : April 2022
+
+mysql:
+  host: "localhost"
+  user: "express"
+  password: "village88"
+  database: "product"
+  port: 3306
+
+postgres:
+  host: "localhost"
+  user: "postgres"
+  password: "village88"
+  database: "express"
+  port: 5432
+
+redis:
+  host: "172.28.209.231"
+  port: 6379

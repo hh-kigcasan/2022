@@ -1,0 +1,24 @@
+<% if(profiler == 1) { %> 
+        <footer>
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <td class = "table-data"><%= profile_details.url %></td>
+                </tr>
+                <tr>
+                    <th>GET DATA:</th>
+                    <td class = "table-data"><%= JSON.stringify(profile_details.get) %></td>
+                </tr>
+                <tr>
+                    <th>POST DATA:</th>
+                    <td class = "table-data"><%= JSON.stringify(profile_details.post) %></td>
+                </tr>
+                <tr>
+                    <th>QUERY:</th>
+                    <td class = "table-data"><%= JSON.stringify(profile_details.query) %></td>
+                </tr>
+            </table>
+        </footer>
+<% } %> 
+    </body>
+</html>

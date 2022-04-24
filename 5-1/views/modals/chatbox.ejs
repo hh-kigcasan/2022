@@ -1,0 +1,43 @@
+<div
+    class="modal fade"
+    id="chatbox"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+        <div class="modal-content" id="chatbox">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Live Chat</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4" id="chatbody"></div>
+            <div class="modal-footer text-dark">
+                <form class="input-group" method="post" action="">
+                    <input id="inputChat" class="form-control" aria-label="Text input with segmented dropdown button" />
+                    <button id="btnSend" class="btn btn-outline-secondary" type="submit">
+                        all
+                        <i class="bi bi-send-fill"></i>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown"
+                        id="btnSendTo"
+                    >
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul id="sendto-list" class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">all</a></li>
+                        <hr />
+                        <% users.map(user=>{ %>
+                        <li><a class="dropdown-item" href="#"><%= user.username %></a></li>
+                        <% }) %>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
