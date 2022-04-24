@@ -1,0 +1,309 @@
+<html>
+<head>
+    <title>JS Capstone</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script> 
+    <script type ="text/javascript" src="src/script.js"></script>
+    <style>
+        *
+        {
+            padding: 0;
+          
+        }
+         html 
+         {
+            background: url('metallica.png') no-repeat center center; 
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            max-width: 100vw;
+            height: 100vh;
+            margin: 0 auto;
+            
+
+           
+      
+        }
+
+        body
+        {
+            height: 80%;
+
+        }
+        
+    
+        #drums
+        {
+            width: 40%;
+            height: 40%;
+            top: 62vh;
+            text-align: center; 
+            display: block;
+            margin-bottom: 0;
+            position: absolute;
+            margin: 0 auto;
+            left: 30%;
+          
+        
+        }
+
+        .piano 
+        {
+           display: flex;
+           width: 100%;
+            text-align: center;
+            height: 10vh;
+            margin-top: 0;
+            position: absolute;
+            top: 3vh;
+            left: 30%;
+           
+           
+           
+        }
+
+            .key {
+            height: calc(var(--width) * 4);
+            width: var(--width);
+            }
+
+            .white {
+            --width: 90px;
+            background-color: white;
+            border: 1px solid #333;
+            }
+
+            .white.active {
+            background-color: crimson;
+            }
+
+            .black {
+            --width: 60px;
+            background-color: black;
+            margin-left: calc(var(--width) / -2);
+            margin-right: calc(var(--width) / -2);
+            z-index: 2;
+            }
+
+            .black.active {
+            background-color: #333;
+            }
+            .pic
+            {
+                width:50px;
+                height: 50px;
+                 margin: 0 auto;
+                 text-align: center;
+            }
+
+            .hand
+            {
+            
+                animation: fadeinout 2s linear 1 forwards;
+            }
+            
+            #hand, #right
+            {
+                display: none;
+                width:50px;
+                height: auto;
+                position: absolute;
+            }
+
+            #foot
+            {
+                display: none;
+                width: 35px;
+                height: auto;
+                position: absolute;
+            }
+            
+            @keyframes fadeinout
+            {
+                0% { opacity: 0; }
+                50% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+            button
+            {
+                margin-bottom: 15px;
+                text-align: center;
+                border: none;
+                padding: 0;
+                display: block;
+               
+            }
+
+            img{
+                margin: 0;
+            }
+
+            #record
+            {
+                display:block;
+            }
+
+            #controls
+            {
+                position: absolute;
+                top: 5px;
+                left: 1.5%;
+                width: 27%;
+                height: auto;
+                background-color: black;
+                font-family: "Consolas";
+                font-size: 18px;
+                line-height: 14px;
+                color: #0f0;				
+                overflow:hidden;
+
+            }
+            #console_systembar
+            {
+            line-height:170%;
+            padding-left:5px;
+            font-weight:bold;
+            color: #000;	
+            height:23px;
+            border-style:outset;
+            border-width:3px;
+            border-bottom:none;
+            background-color: #bbb;
+            background-image: -webkit-linear-gradient(left, #bbb 0%, #808080 100%);
+            background-image: -ms-linear-gradient(left, #bbb 0%, #808080 100%);
+            }
+
+            #console_content{
+            overflow-y:scroll;
+            height:368px;
+            background-color: #000;
+            border-style:ridge;
+            border-width:3px;
+            border-color:#eee;
+            }
+
+            .console_cursor{
+            font-weight:bold;
+            display:inline;
+            position:relative;
+            left:-6px;
+            -webkit-animation: cursor_blinker 1.2s infinite;
+            -ms-animation: cursor_blinker 1.2s infinite;
+            -webkitanimation-timing-function: linear;
+            }
+
+            @-webkit-keyframes cursor_blinker {
+            0%   { opacity: 0; }
+            49%  { opacity: 0; }
+            50%  { opacity: 1; }
+            100% { opacity: 1; }
+            }
+
+            @-ms-keyframes cursor_blinker {
+            0%   { opacity: 0; }
+            49%  { opacity: 0; }
+            50%  { opacity: 1; }
+            100% { opacity: 1; }
+            }			
+
+            #console_output{
+            display:block;
+            left:0;
+            width:100%;
+            overflow:hidden;
+            word-break: break-all;
+            word-wrap:break-word;
+            white-space:pre-wrap;				
+            }
+
+            #console_input{
+            display:inline;
+            width:100%;
+            overflow:hidden;
+            word-break: break-all;
+            word-wrap:break-word;
+            white-space:pre-wrap;				
+            }
+
+            #buttons
+            {
+                position: absolute;
+                top: 67%;
+                left: 11.7%;
+                width: 200px;
+                height: 200px;
+                
+
+            }
+    </style>
+</head>
+<body>
+
+        <div class ="piano">
+            <div id ="C" class="key white"></div>
+            <div id ="Db" class="key black"></div>
+            <div id ="D" class="key white"></div>
+            <div id ="Eb" class="key black"></div>
+            <div id ="E" class="key white"></div>
+            <div id ="F" class="key white"></div>
+            <div id ="Gb" class="key black"></div>
+            <div id ="G" class="key white"></div>
+            <div id ="Ab" class="key black"></div>
+            <div id ="A" class="key white"></div>
+            <div id ="Bb" class="key black"></div>
+            <div id ="B" class="key white"></div>
+        </div>
+        <div id="controls">
+            <div id="console_systembar">Controls</div>
+            <div id="console_content">
+                <p class="console_cursor" >&nbsp; CONTROLS FOR PIANO:</p>
+                <p>&nbsp; F => do, T => do#, G => re,</p>
+                <p> &nbsp; Y=> re#, H => mi, J => fa</p>
+                <p> &nbsp; I => fa#, K => sol, O => sol#</p>
+                <p> &nbsp; L => la, P => la#, ; => si</p>
+                <p class="console_cursor" >&nbsp; CONTROLS FOR DRUMS:</p>
+                <p>&nbsp; W => kick, A => highTom,  </p>
+                <p>&nbsp; D => midTom</p>
+                <p> &nbsp; Shift => snare, space => lowTom</p>
+                <p>&nbsp; 1 (numlock) => hihat, 2 => crash </p>
+              
+            </div>
+          </div>
+        <p id="demo"></p>
+        <div id = "buttons">
+        <button id = "record"><img class="pic" src="record.png"></button>
+        <button id = "play"><img class="pic" src="play.png"></button>
+        <button id = "refresh"><img class="pic" src="refresh.png"></button>
+         </div>
+
+        <div>
+            <img id="drums" onclick="showCoords(event)" src="drums.png">
+            <img class="hand"  id ="hand" src = "right.png">
+            <img class="hand"  id ="right" src = "right.png">
+            <img class="hand"  id ="foot" src = "foot.png">
+        </div>
+       
+        
+        <script>
+         
+            console.log("width", window.innerWidth);
+            console.log("height", window.innerHeight);
+            /*
+            function showCoords(event)
+             {
+              var x = event.clientX;
+              var y = event.clientY;
+              var coords = "X coords: " + x + ", Y coords: " + y;
+              document.getElementById("demo").innerHTML = coords;
+            }
+            */
+            
+        </script>
+
+
+    
+    
+</body>
+</html>
+
