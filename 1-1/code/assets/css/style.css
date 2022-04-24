@@ -1,0 +1,102 @@
+.bg-image-vertical {
+	position: relative;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+	.h-custom-2 {
+		height: 100%;
+	}
+}
+
+svg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.country {
+	fill: #ccc;
+	stroke: #999;
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: center;
+	width: 80px;
+	height: 28px;
+	padding: 2px;
+	font: 12px sans-serif;
+	background: lightsteelblue;
+	border: 0px;
+	border-radius: 8px;
+	pointer-events: none;
+}
+
+.label {
+	background-color: #193f6e;
+	color: white;
+	text-align: center;
+	border-radius: 0.3rem;
+	margin: 20px;
+}
+
+li {
+	list-style-type: none;
+	margin: 20px;
+}
+
+.candidate_image {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.candidate_details {
+	display: inline-block;
+	height: 50px;
+	position: absolute;
+	margin: 5px 10px 0px 10px;
+	line-height: 80%;
+}
+
+.admin_login {
+	margin: auto;
+	padding: 100px 20px 20px 20px;
+	width: 40%;
+	text-align: center;
+}
+
+.navbar-brand {
+	margin-left: 20px;
+}
+
+.nav-link {
+	color: white;
+}
+
+.content {
+	padding: 20px;
+}
+
+.table_image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+h2,
+h3 {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.position {
+	color: white;
+	padding: 10px;
+	text-align: center;
+}

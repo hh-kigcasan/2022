@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="https://d3js.org/topojson.v1.min.js"></script>
+		<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+		<script src="./js/main.js"></script>
+		<link href="./css/style.css" rel="stylesheet" />
+		<!-- Font Awesome -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
+			rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
+		></script>
+		<title>Dashboard</title>
+	</head>
+	<body>
+		<section class="vh-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="presidential_result">
+							<h3 class="label">President</h3>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate1"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 1</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate2"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 2</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate3"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 3</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+						</div>
+						<div class="vice_presidential_result">
+							<h3 class="label">Vice President</h3>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate1"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 1</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate2"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 2</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate3"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 3</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h1>Philippine Tally</h1>
+						<div id="d3-ph-map"></div>
+					</div>
+					<div class="col-md-3">
+						<div class="presidential_result">
+							<h3 class="label">Senatorial</h3>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate1"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 1</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate2"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 2</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate3"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 3</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+							<li>
+								<img
+									src="./images/img_avatar.png"
+									alt="candidate4"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>Candidate 4</p>
+									<p>1,452,323</p>
+								</div>
+							</li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

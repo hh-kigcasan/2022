@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="https://d3js.org/topojson.v1.min.js"></script>
+		<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+		<script src="./js/main.js"></script>
+		<link href="./css/style.css" rel="stylesheet" />
+		<!-- Font Awesome -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
+			rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
+		></script>
+		<title>Unofficial Election Tally</title>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script>
+			$(document).ready(() => {
+				let socket = io();
+				//socket.emit("vote", {});
+				socket.on("vote", (data) => {
+					let votes = document.getElementById(data.data.id);
+					votes.innerHTML = `${data.data.garnered_votes} votes`;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<section class="vh-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="presidential_result">
+							<h3 class="label">President</h3>
+							<% for(president of presidents) { %>
+							<li>
+								<img
+									src="./images/<%= president.image %>"
+									alt="<%=
+									president.last_name %>"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>
+										<%= president.first_name %> <%=
+										president.last_name %>
+									</p>
+									<p id="<%= president.id %>">0 votes</p>
+								</div>
+							</li>
+							<% } %>
+						</div>
+						<div class="vice_presidential_result">
+							<h3 class="label">Vice President</h3>
+							<% for(vice_president of vice_presidents) { %>
+							<li>
+								<img
+									src="./images/<%= vice_president.image %>"
+									alt="<%=
+									vice_president.last_name %>"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>
+										<%= vice_president.first_name %> <%=
+										vice_president.last_name %>
+									</p>
+									<p id="<%= vice_president.id %>">0 votes</p>
+								</div>
+							</li>
+							<% } %>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h1>Philippine Tally</h1>
+						<div id="d3-ph-map"></div>
+					</div>
+					<div class="col-md-3">
+						<div class="presidential_result">
+							<h3 class="label">Senatorial</h3>
+							<% for(senator of senators) { %>
+							<li>
+								<img
+									src="./images/<%= senator.image %>"
+									alt="<%= senator.first_name %>"
+									class="candidate_image"
+								/>
+								<div class="candidate_details">
+									<p>
+										<%= senator.first_name %> <%=
+										senator.last_name %>
+									</p>
+									<p id="<%= senator.id %>">0 votes</p>
+								</div>
+							</li>
+							<% } %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,2 @@
+port: 8000
+db: "mongodb+srv://dbUser:Password@cluster0.ds09z.mongodb.net/election_data?retryWrites=true&w=majority"
