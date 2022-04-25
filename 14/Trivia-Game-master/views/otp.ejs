@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Trivia War - OTP</title>
+    <style>
+        body{
+            background-color: #393071;
+        }
+        h5{
+            margin: 10px 0px;
+        }
+        nav{
+            background-color: #0A013F;
+            height: 200;
+        }
+        a{
+            color:white;
+        }
+        #verify{
+            background: rgba(86, 73, 237, 0.88);
+            color: white;
+            margin-top: 100px; 
+        }
+        #verify h1{
+            border: solid white 5px;
+            padding: 5px 0;
+            position: relative;
+            bottom: 40px;
+        }
+        .btn-verify{
+          background: #382F9C;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+     <script type ="text/javascript">
+         $(document).ready(function (){
+     
+             var socket = io(); //1
+     
+             $("#donate").click(function(e){
+                 socket.emit('posting_form', 10);
+             })
+             $("#redeem").click(function(e){
+                 socket.emit('posting_form', -10);
+             })
+             socket.on('total_amount', function(data){
+                 $('#amount').text(data)
+             })
+
+          })
+     </script>
+</head>
+<body>
+ <div id="wrapper">
+    <nav class="navbar navbar-light ">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/images/Trivia War 2.jpg" alt="" width="250" height="100">
+          </a>
+        </div>
+    </nav>
+    <div class="card container col-lg-6 px-5" id="verify">
+        <h1 class="text-center">VERIFY</h1>
+        <!-- <form action="/result" method="POST"> -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">OTP: </label>
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3 row justify-content-end">
+                <div class="col-lg-2">
+                    <a href="/login"><button type="submit" class="btn btn-verify">Verify</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+ </div>
+</body>
+</html>
